@@ -1,0 +1,34 @@
+{
+  "name": "rootgroceries-playwright-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation for RootGroceries",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:parallel": "playwright test --workers=4",
+    "test:serial": "playwright test --workers=1",
+    "test:smoke": "playwright test -g @smoke",
+    "test:regression": "playwright test -g @regression",
+    "test:critical": "playwright test -g @critical",
+    "test:tag": "playwright test -g",
+    "test:fast": "playwright test --workers=4 --timeout=15000",
+    "test:slow": "playwright test --workers=1 --timeout=120000 --slow-mo=500",
+    "lint": "eslint tests --ext .ts",
+    "format": "prettier --write \"tests/**/*.ts\"",
+    "clean": "rm -rf test-results playwright-report .playwright"
+  },
+  "dependencies": {
+    "@playwright/test": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "typescript": "^6.0.3"
+  }
+}
