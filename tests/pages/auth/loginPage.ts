@@ -40,7 +40,7 @@ export class LoginPage {
   }
 
   async open() {
-    await this.page.goto('/login', { waitUntil: 'networkidle' });
+    await this.page.goto('/login', { waitUntil: 'domcontentloaded' });
     await selectSriLanka(this.page);
   }
   async login(email: string, password: string) {
