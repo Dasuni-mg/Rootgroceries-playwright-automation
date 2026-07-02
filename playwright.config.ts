@@ -1,10 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
-// Load environment variables
 dotenv.config();
-
-const baseURL = process.env.BASE_URL || 'http://localhost:3000';
 
 export default defineConfig({
   testDir: './tests/specs',
@@ -17,9 +14,9 @@ export default defineConfig({
     ['json', { outputFile: 'test-results.json' }],
     ['list'],
   ],
-  
+
   use: {
-    baseURL: baseURL,
+    baseURL: process.env.BASE_URL ?? 'https://rootsgroceries.com',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -58,11 +55,4 @@ export default defineConfig({
       use: { ...devices['iPhone 12'] },
     },
   ],
-
-  webServer: {
-    command: 'npm run start',
-    url: baseURL,
-    reuseExistingServer: !process.env.CI,
-    timeout: 120000,
-  },
 });

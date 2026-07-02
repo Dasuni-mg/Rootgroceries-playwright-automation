@@ -1,0 +1,1796 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\Rootgroceries playwright automation\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/specs/auth/login.spec.ts",
+      "--headed"
+    ],
+    "configFile": "D:\\Rootgroceries playwright automation\\playwright.config.ts",
+    "rootDir": "D:/Rootgroceries playwright automation/tests/specs",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/Rootgroceries playwright automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Rootgroceries playwright automation/tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Rootgroceries playwright automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "D:/Rootgroceries playwright automation/tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Rootgroceries playwright automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "D:/Rootgroceries playwright automation/tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Rootgroceries playwright automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "D:/Rootgroceries playwright automation/tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Rootgroceries playwright automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "D:/Rootgroceries playwright automation/tests/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth\\login.spec.ts",
+      "file": "auth/login.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Login Feature",
+          "file": "auth/login.spec.ts",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Login with valid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 30404,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:09:22.754Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-de578d06837bd0ec599b",
+              "file": "auth/login.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 30350,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:09:22.805Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-b020b251ec4776a24281",
+              "file": "auth/login.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 24750,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:10.173Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-c3ca868aed152a318119",
+              "file": "auth/login.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "Login with empty email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15504,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:10.149Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-0d8c4ccaec0e7f32e2fc",
+              "file": "auth/login.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "Login with empty password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 20081,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:25.747Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-f91682599998d41f5683",
+              "file": "auth/login.spec.ts",
+              "line": 63,
+              "column": 7
+            },
+            {
+              "title": "Login with both fields empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11336,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:34.995Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-757b824b8f209db3c2be",
+              "file": "auth/login.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "Forgot password link directs to Reset Password form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10817,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:45.896Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-35b4dba8dc5c5b2055fc",
+              "file": "auth/login.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "Create Account link directs to registration page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9523,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:46.394Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-a68087ba30648174ff3a",
+              "file": "auth/login.spec.ts",
+              "line": 103,
+              "column": 7
+            },
+            {
+              "title": "Login with valid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 36038,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:8:8",
+                        "location": {
+                          "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                          "column": 8,
+                          "line": 8
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Login Feature'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mopen()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                            "column": 8,
+                            "line": 8
+                          },
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n\u001b[0m \u001b[90m  6 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Login Feature'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mopen()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:8:8\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                            "column": 15,
+                            "line": 15
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\u001b[22m\n\u001b[2m    at LoginPage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:44:5)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:10:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:59.891Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-valid-credentials-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-valid-credentials-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-valid-credentials-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                        "column": 8,
+                        "line": 8
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-b972db097170e49c5315",
+              "file": "auth/login.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid password",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 36034,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:8:8",
+                        "location": {
+                          "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                          "column": 8,
+                          "line": 8
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Login Feature'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mopen()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                            "column": 8,
+                            "line": 8
+                          },
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n\u001b[0m \u001b[90m  6 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Login Feature'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m  7 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m loginPage \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mLoginPage\u001b[39m(page)\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m loginPage\u001b[33m.\u001b[39mopen()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:8:8\u001b[22m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                            "column": 15,
+                            "line": 15
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\u001b[22m\n\u001b[2m    at LoginPage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:44:5)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:10:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:10:59.897Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-invalid-password-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-invalid-password-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-invalid-password-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                        "column": 8,
+                        "line": 8
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-743685a964a4bfefb4f0",
+              "file": "auth/login.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 23388,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:11:55.082Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-9d340b89e48ad01b4e13",
+              "file": "auth/login.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "Login with empty email",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 28794,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\n    at LoginPage.login (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:47:5)\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:54:5",
+                        "location": {
+                          "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                          "column": 15,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                            "column": 15,
+                            "line": 15
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\u001b[22m\n\u001b[2m    at LoginPage.login (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:47:5)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:54:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:11:55.082Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-empty-email-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-empty-email-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-empty-email-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                        "column": 15,
+                        "line": 15
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-b4b281a54030a3f032ce",
+              "file": "auth/login.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "Login with empty password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11133,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:12:24.630Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-4f0a0709ae5bc2b40375",
+              "file": "auth/login.spec.ts",
+              "line": 63,
+              "column": 7
+            },
+            {
+              "title": "Login with both fields empty",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16529,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\n    at LoginPage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:44:5)\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:10:5",
+                        "location": {
+                          "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                          "column": 15,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                            "column": 15,
+                            "line": 15
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\u001b[22m\n\u001b[2m    at LoginPage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:44:5)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:10:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:12:37.733Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-both-fields-empty-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-both-fields-empty-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-both-fields-empty-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                        "column": 15,
+                        "line": 15
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-a85778038de5a27dfe90",
+              "file": "auth/login.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "Forgot password link directs to Reset Password form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 13950,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:12:35.845Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-7947527c4ec99b7031e9",
+              "file": "auth/login.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "Create Account link directs to registration page",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 21039,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\n    at LoginPage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:44:5)\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:10:5",
+                        "location": {
+                          "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                          "column": 15,
+                          "line": 15
+                        },
+                        "snippet": "\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                            "column": 15,
+                            "line": 15
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog', { name: /where are you shopping/i }).first().locator('button:has-text(\"Sri Lanka\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" class=\"country-card\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\utils\\selectCountry.ts:15\n\n\u001b[0m \u001b[90m 13 |\u001b[39m   \u001b[36mconst\u001b[39m sri \u001b[33m=\u001b[39m dialog\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Sri Lanka\")'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m) \u001b[33m&&\u001b[39m \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39misEnabled()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 15 |\u001b[39m     \u001b[36mawait\u001b[39m sri\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForLoadState(\u001b[32m'networkidle'\u001b[39m)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mnull\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 17 |\u001b[39m     \u001b[90m// Check if dialog was dismissed (may have navigated)\u001b[39m\n \u001b[90m 18 |\u001b[39m     \u001b[36mconst\u001b[39m stillOpen \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m dialog\u001b[33m.\u001b[39misVisible()\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m \u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at selectSriLanka (D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts:15:15)\u001b[22m\n\u001b[2m    at LoginPage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:44:5)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:10:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:12:49.903Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-C-6d167-irects-to-registration-page-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-C-6d167-irects-to-registration-page-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Rootgroceries playwright automation\\tests\\utils\\selectCountry.ts",
+                        "column": 15,
+                        "line": 15
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-4e9a683a682088288a8e",
+              "file": "auth/login.spec.ts",
+              "line": 103,
+              "column": 7
+            },
+            {
+              "title": "Login with valid credentials",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 31525,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts",
+                            "column": 34,
+                            "line": 48
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"email\"], input[name=\"email\"], input[placeholder*=\"email\" i], input[aria-label*=\"email\" i]').first()\u001b[22m\n\u001b[2m    - locator resolved to <input name=\"email\" class=\"input\"/>\u001b[22m\n\u001b[2m    - fill(\"nuwanika@gmail.com\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\auth\\loginPage.ts:48\n\n\u001b[0m \u001b[90m 46 |\u001b[39m   \u001b[36masync\u001b[39m login(email\u001b[33m:\u001b[39m string\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m string) {\n \u001b[90m 47 |\u001b[39m     \u001b[36mawait\u001b[39m selectSriLanka(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39memailOrPhoneInput\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 49 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpasswordInput\u001b[33m.\u001b[39mfill(password)\u001b[33m;\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloginButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 51 |\u001b[39m   }\u001b[0m\n\u001b[2m    at LoginPage.login (D:\\Rootgroceries playwright automation\\tests\\pages\\auth\\loginPage.ts:48:34)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:17:5\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:12:59.095Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-valid-credentials-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-valid-credentials-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-799ff5dacf7416e69160",
+              "file": "auth/login.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid password",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 31433,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts",
+                            "column": 64,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.toast-error, [role=\"alert\"]')\nExpected: visible\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.toast-error, [role=\"alert\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 32 |\u001b[39m\n \u001b[90m 33 |\u001b[39m     \u001b[90m// Verify error notification appears (server error or invalid credentials)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 34 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.toast-error, [role=\"alert\"]'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 35 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 36 |\u001b[39m\n \u001b[90m 37 |\u001b[39m   test(\u001b[32m'Login with invalid email'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\login.spec.ts:34:64\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:13:13.307Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-invalid-password-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-invalid-password-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-login-Login-Feature-Login-with-invalid-password-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-8358d7bbe060936e29bf",
+              "file": "auth/login.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11935,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:13:45.574Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-8ea1c2b427b7f0dc51f8",
+              "file": "auth/login.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "Login with empty email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11321,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:13:46.746Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-fe228ac9051f5b5c1e43",
+              "file": "auth/login.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "Login with empty password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12880,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:13:57.709Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-0c234cc9b3133621c33d",
+              "file": "auth/login.spec.ts",
+              "line": 63,
+              "column": 7
+            },
+            {
+              "title": "Login with both fields empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 18031,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:13:58.274Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-d84fab6ffd53bf50ff76",
+              "file": "auth/login.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "Forgot password link directs to Reset Password form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13626,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:14:10.730Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-372170e955264ae13272",
+              "file": "auth/login.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "Create Account link directs to registration page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9703,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:14:16.357Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-d3ed44c33281aa9c98da",
+              "file": "auth/login.spec.ts",
+              "line": 103,
+              "column": 7
+            },
+            {
+              "title": "Login with valid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12702,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:14:25.734Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-5cb4f67fed3e5eb22861",
+              "file": "auth/login.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12761,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:14:27.083Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-5af9fb07fa1a230ec310",
+              "file": "auth/login.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11787,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:14:51.899Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-326837918eac077d7904",
+              "file": "auth/login.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "Login with empty email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11949,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:14:51.988Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-ecbe61d8974fe8f13209",
+              "file": "auth/login.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "Login with empty password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10611,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:03.747Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-6444fe595945ed7d28f0",
+              "file": "auth/login.spec.ts",
+              "line": 63,
+              "column": 7
+            },
+            {
+              "title": "Login with both fields empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9308,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:04.005Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-f4f2e09f6716e32088eb",
+              "file": "auth/login.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "Forgot password link directs to Reset Password form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9291,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:13.400Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-6c477b03f76381ef62d0",
+              "file": "auth/login.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "Create Account link directs to registration page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9661,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:14.421Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-38a38da15c731ad21165",
+              "file": "auth/login.spec.ts",
+              "line": 103,
+              "column": 7
+            },
+            {
+              "title": "Login with valid credentials",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 12071,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:25.196Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-91b6504d5718ab8fae90",
+              "file": "auth/login.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 12033,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:26.238Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-9a89fc854a459248b1d1",
+              "file": "auth/login.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "Login with invalid email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 11089,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:37.659Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-45999dfa6a25d002af8d",
+              "file": "auth/login.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "Login with empty email",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 10856,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:38.435Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-27d418123a51e5832817",
+              "file": "auth/login.spec.ts",
+              "line": 50,
+              "column": 7
+            },
+            {
+              "title": "Login with empty password",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 13214,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:48.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-54bfe3dc7679f88eb222",
+              "file": "auth/login.spec.ts",
+              "line": 63,
+              "column": 7
+            },
+            {
+              "title": "Login with both fields empty",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11448,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:15:49.340Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-ade793068bb35fc261f7",
+              "file": "auth/login.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "Forgot password link directs to Reset Password form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:16:00.873Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-cd6ffabbb1e1ae974cfb",
+              "file": "auth/login.spec.ts",
+              "line": 90,
+              "column": 7
+            },
+            {
+              "title": "Create Account link directs to registration page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 28540,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-02T13:16:02.063Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "231ca1f0f4db3e4958c3-7456fb8f8d9876858aa2",
+              "file": "auth/login.spec.ts",
+              "line": 103,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-07-02T13:09:21.509Z",
+    "duration": 429272.075,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 7,
+    "flaky": 0
+  }
+}

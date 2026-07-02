@@ -25,7 +25,8 @@
     "clean": "rm -rf test-results playwright-report .playwright"
   },
   "dependencies": {
-    "@playwright/test": "latest"
+    "@playwright/test": "latest",
+    "dotenv": "^17.4.2"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
