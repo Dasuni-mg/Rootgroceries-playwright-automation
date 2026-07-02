@@ -9,51 +9,47 @@ export class SignupPage {
   }
 
   get usernameInput() {
-    return this.page.locator(
-      'input[name="username"], input[name="name"], input[placeholder*="username" i], input[placeholder*="name" i], input[aria-label*="username" i], input[aria-label*="name" i]'
-    ).first();
+    return this.page.getByRole('textbox', { name: /name/i });
   }
 
   get emailInput() {
-    return this.page.locator(
-      'input[type="email"], input[name="email"], input[placeholder*="email" i], input[autocomplete="email"], input[aria-label*="email" i]'
-    ).first();
+    return this.page.getByRole('textbox', { name: /email/i });
   }
 
   get phoneInput() {
-    return this.page.locator(
-      'input[type="tel"], input[name="phone"], input[placeholder*="phone" i], input[aria-label*="phone" i]'
-    ).first();
+    return this.page.getByRole('textbox', { name: /phone/i });
   }
 
   get passwordInput() {
-    return this.page.locator(
-      'input[type="password"], input[name="password"], input[placeholder*="password" i], input[aria-label*="password" i]'
-    ).first();
+    return this.page.getByRole('textbox', { name: /password/i });
   }
 
   get createAccountButton() {
-    return this.page.locator('button[type="submit"], button:has-text("Create Account"), button:has-text("Register"), input[type="submit"]').first();
+    return this.page.getByRole('button', { name: /create account|register/i });
   }
 
   get loginLink() {
-    return this.page.locator('a:has-text("Login"), a:has-text("Sign In")').first();
+    return this.page.getByRole('main').getByRole('link', { name: /login/i });
   }
 
   get usernameError() {
-    return this.getFieldError(this.usernameInput);
+    const container = this.usernameInput.locator('..');
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
   }
 
   get emailError() {
-    return this.getFieldError(this.emailInput);
+    const container = this.emailInput.locator('..');
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
   }
 
   get phoneError() {
-    return this.getFieldError(this.phoneInput);
+    const container = this.phoneInput.locator('..');
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
   }
 
   get passwordError() {
-    return this.getFieldError(this.passwordInput);
+    const container = this.passwordInput.locator('..').locator('..');
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
   }
 
   async open() {
@@ -62,7 +58,6 @@ export class SignupPage {
   }
 
   async closeCountryGateIfPresent() {
-    // kept for backward compatibility; prefer using selectSriLanka
     const dialog = this.page.getByRole('dialog').first();
     if (await dialog.isVisible().catch(() => false)) {
       await selectSriLanka(this.page);
@@ -82,10 +77,5 @@ export class SignupPage {
 
   async clickLogin() {
     await this.loginLink.click();
-  }
-
-  private getFieldError(inputLocator: Locator) {
-    const container = inputLocator.locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
   }
 }

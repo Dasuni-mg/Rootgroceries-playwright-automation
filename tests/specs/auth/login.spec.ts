@@ -31,7 +31,7 @@ test.describe('Login Feature', () => {
     await expect(page).toHaveURL('/login');
 
     // Verify error notification appears (server error or invalid credentials)
-    await expect(page.locator('.toast-error, [role="alert"]')).toBeVisible();
+    await expect(page.getByRole('alert')).toBeVisible();
   });
 
   test('Login with invalid email', async ({ page }) => {
@@ -44,7 +44,7 @@ test.describe('Login Feature', () => {
     await expect(page).toHaveURL('/login');
 
     // Verify error notification appears (server error or invalid credentials)
-    await expect(page.locator('.toast-error, [role="alert"]')).toBeVisible();
+    await expect(page.getByRole('alert')).toBeVisible();
   });
 
   test('Login with empty email', async ({ page }) => {

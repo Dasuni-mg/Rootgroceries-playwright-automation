@@ -9,15 +9,15 @@ export class LoginPage {
   }
 
   get emailOrPhoneInput() {
-    return this.page.locator('input[type="email"], input[name="email"], input[placeholder*="email" i], input[aria-label*="email" i]').first();
+    return this.page.getByPlaceholder(/email/i).or(this.page.getByPlaceholder(/phone/i)).first();
   }
 
   get passwordInput() {
-    return this.page.locator('input[type="password"], input[name="password"], input[aria-label*="password" i]').first();
+    return this.page.getByPlaceholder(/password/i);
   }
 
   get loginButton() {
-    return this.page.locator('button[type="submit"], button:has-text("Login")').first();
+    return this.page.getByRole('button', { name: /login/i });
   }
 
   get emailOrPhoneError() {
@@ -32,11 +32,11 @@ export class LoginPage {
   }
 
   get forgotPasswordLink() {
-    return this.page.locator('a[href*="forgot"], a:has-text("Forgot password")').first();
+    return this.page.getByRole('link', { name: /forgot password/i });
   }
 
   get createAccountLink() {
-    return this.page.locator('a[href*="register"], a[href*="signup"], a:has-text("Create Account"), a:has-text("Sign up")').first();
+    return this.page.getByRole('link', { name: /create account|sign up/i });
   }
 
   async open() {

@@ -10,7 +10,7 @@ export async function selectSriLanka(page: Page): Promise<boolean> {
   }
 
   // Try clicking the Sri Lanka card if enabled
-  const sri = dialog.locator('button:has-text("Sri Lanka")').first();
+  const sri = dialog.getByRole('button', { name: /sri lanka/i });
   if (await sri.isVisible().catch(() => false) && await sri.isEnabled().catch(() => false)) {
     await sri.click();
     await page.waitForLoadState('networkidle').catch(() => null);

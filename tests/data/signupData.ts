@@ -1,69 +1,121 @@
+const uid = `${Date.now()}-${Math.random().toString(36).slice(2, 6)}`;
+
 export const signupData = {
 
-  // Valid user for happy path
+  // Happy path with all fields
   validUser: {
-    username: "john123",
-    phone: "0771234567",
-    email: "john@test.com",
-    password: "Password@123"
+    username: "janedoe",
+    email: `jane${uid}@test.com`,
+    phone: `077${uid.replace(/\D/g, '').slice(-7).padStart(7, '0')}`,
+    password: "Secure@123"
   },
 
-  // Username validation
+  // Happy path without phone (phone is optional)
+  validUserWithoutPhone: {
+    username: "johndoe",
+    email: `john${uid}@test.com`,
+    phone: "",
+    password: "Pass@1234"
+  },
+
+  // Username (required — labeled "Name")
+  // Requirement: 2–26 characters
+
   username: [
-    // Required
-    { value: "", error: "Username is required" },
-
-    // Boundary
-    { value: "ab", error: "Minimum 3 characters required" },
-    { value: "abc", error: "" },                        // Minimum valid
-    { value: "abcdefghijklmnopqrst", error: "" },       // Maximum valid (20 chars)
-    { value: "abcdefghijklmnopqrstu", error: "Maximum 20 characters allowed" },
-
     // Positive
-    { value: "john123", error: "" },
-    { value: "john_doe", error: "" },
+    { value: "Alice", error: "" },
+    { value: "Ab", error: "" },                          // Minimum valid (2 chars)
+    { value: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", error: "" }, // Maximum valid (26 chars)
 
     // Negative
-    { value: "john doe", error: "Username cannot contain spaces" },
-    { value: "@john", error: "Invalid username" },
-    { value: "' OR '1'='1", error: "Invalid username" },
-    { value: "<script>alert(1)</script>", error: "Invalid username" }
+    { value: "", error: "Name is required" },
+    { value: "@@@", error: "Please enter a valid name" },
+
+    // Edge
+    { value: "A", error: "Name must be at least 2 characters." },              // Below minimum
+    { value: "ABCDEFGHIJKLMNOPQRSTUVWXYZA", error: "Name cannot exceed 26 characters." }, // Above maximum
+
+    // Security
+    { value: "' OR '1'='1", error: "Please enter a valid name" },              // SQL Injection
+    { value: "<script>alert(1)</script>", error: "Please enter a valid name" } // XSS
   ],
 
-  // Phone validation
+
+  // Phone (optional)
+  // Requirement:
+  // - Empty value is allowed
+  // - Valid formats: 0712345678 or +94712345678
+
   phone: [
-    { value: "", error: "Phone number is required" },
+    // Positive
+    { value: "", error: "" },                    // Optional field
+    { value: "0712345678", error: "" },
+    { value: "+94712345678", error: "" },
 
-    { value: "123456789", error: "Invalid phone number" },      // 9 digits
-    { value: "0771234567", error: "" },                         // Valid
-    { value: "07712345678", error: "Invalid phone number" },    // 11 digits
+    // Negative
+    { value: "abc123", error: "Please enter a valid phone number" },
+    { value: "@#$%", error: "Please enter a valid phone number" },
 
-    { value: "abcdef", error: "Invalid phone number" },
-    { value: "@#$%", error: "Invalid phone number" }
+    // Edge
+    { value: "1", error: "Phone number must be 10 digits" },                // Below minimum
+    { value: "1234567890123456", error: "Phone number cannot exceed 15 digits" }, // Above maximum
+
+    // Security
+    { value: "' OR '1'='1", error: "Please enter a valid phone number" },          // SQL Injection
+    { value: "<script>alert('xss')</script>", error: "Please enter a valid phone number" } // XSS
   ],
 
-  // Email validation
+  // Email (required)
+  // Requirement: Valid email format
+
   email: [
+    // Positive
+    { value: "user@domain.com", error: "" },
+    { value: "user+tag@domain.co.uk", error: "" },
+
+    // Negative
     { value: "", error: "Email is required" },
+    { value: "abc", error: "Please enter a valid email address" },
+    { value: "john@", error: "Please enter a valid email address" },
 
-    { value: "abc", error: "Invalid email" },
-    { value: "john@", error: "Invalid email" },
-    { value: "john@gmail", error: "Invalid email" },
+    // Edge
+    { value: "a@b.co", error: "" }, // Minimum valid email
+    { value: "verylongemailaddress1234567890@averylongdomainnameexample.com", error: "" }, // Maximum valid (adjust if app has a limit)
+    { value: "user@.com", error: "Please enter a valid email address" }, // Invalid domain
 
-    { value: "john@gmail.com", error: "" }
+    // Security
+    { value: "' OR '1'='1'@x.com", error: "Please enter a valid email address" }, // SQL Injection
+    { value: "<script>alert(1)</script>@x.com", error: "Please enter a valid email address" } // XSS
   ],
 
-  // Password validation
-  password: [
-    { value: "", error: "Password is required" },
+// Password (required)
+// Requirement:
+// - Minimum 8 characters
+// - At least 1 uppercase letter
+// - At least 1 lowercase letter
+// - At least 1 number
+// - At least 1 special character
 
-    { value: "12345", error: "Password must be at least 8 characters" },
-    { value: "password", error: "Password must contain uppercase, number and special character" },
-    { value: "PASSWORD", error: "Password must contain lowercase, number and special character" },
-    { value: "Password", error: "Password must contain number and special character" },
-    { value: "Password1", error: "Password must contain special character" },
+password: [
+  // Positive
+  { value: "Secure@123", error: "" },
 
-    { value: "Password@123", error: "" }
-  ]
+  // Negative
+  { value: "", error: "Password is required" },
+  { value: "Ab1@", error: "Password must be at least 8 characters" },
+  { value: "password", error: "Password must contain an uppercase letter, a number, and a special character" },
+  { value: "PASSWORD", error: "Password must contain a lowercase letter, a number, and a special character" },
+  { value: "Password", error: "Password must contain a number and a special character" },
+  { value: "Password1", error: "Password must contain a special character" },
+
+  // Edge
+  { value: "Aa1@aaaa", error: "" }, // Minimum valid (8 characters)
+  { value: "A".repeat(50) + "@1a", error: "" }, // Maximum valid (adjust to actual limit)
+  { value: "A".repeat(51) + "@1a", error: "Password cannot exceed 50 characters" }, // Above maximum (if max is 50)
+
+  // Security
+  { value: "' OR '1'='1", error: "Password must contain a lowercase letter, a number, and a special character" }, // SQL Injection
+  { value: "<script>alert(1)</script>", error: "Password cannot contain invalid characters" } // XSS
+]
 
 };
