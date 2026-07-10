@@ -1,12 +1,9 @@
-import { test, expect } from '@playwright/test';
-import { SignupPage } from '../../pages/auth/signupPage';
+import { test, expect } from '../../fixtures';
 import { signupData } from '../../data/signupData';
 
 test.describe('Signup Page', () => {
-  let signupPage: SignupPage;
 
-  test.beforeEach(async ({ page }) => {
-    signupPage = new SignupPage(page);
+  test.beforeEach(async ({ signupPage }) => {
     await signupPage.open();
   });
 
@@ -56,7 +53,7 @@ test.describe('Signup Page', () => {
 
   test.describe('Username Validation', () => {
     signupData.username.forEach((data: { value: string; error: string }) => {
-      test(`Username: ${data.value || 'Empty Username'}`, async () => {
+      test(`Username: ${data.value || 'Empty Username'}`, async ({ signupPage }) => {
         await signupPage.fillSignupForm(
           data.value,
           signupData.validUser.email,
@@ -77,7 +74,7 @@ test.describe('Signup Page', () => {
 
   test.describe('Email Validation', () => {
     signupData.email.forEach((data: { value: string; error: string }) => {
-      test(`Email: ${data.value || 'Empty Email'}`, async () => {
+      test(`Email: ${data.value || 'Empty Email'}`, async ({ signupPage }) => {
         await signupPage.fillSignupForm(
           signupData.validUser.username,
           data.value,

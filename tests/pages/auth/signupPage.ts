@@ -34,22 +34,22 @@ export class SignupPage {
 
   get usernameError() {
     const container = this.usernameInput.locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]');
   }
 
   get emailError() {
     const container = this.emailInput.locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]');
   }
 
   get phoneError() {
     const container = this.phoneInput.locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]');
   }
 
   get passwordError() {
     const container = this.passwordInput.locator('..').locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]');
   }
 
   async open() {
@@ -58,7 +58,7 @@ export class SignupPage {
   }
 
   async closeCountryGateIfPresent() {
-    const dialog = this.page.getByRole('dialog').first();
+    const dialog = this.page.getByRole('dialog', { name: /where are you shopping/i });
     if (await dialog.isVisible().catch(() => false)) {
       await selectSriLanka(this.page);
     }

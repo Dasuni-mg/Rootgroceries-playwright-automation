@@ -9,11 +9,11 @@ export class LoginPage {
   }
 
   get emailOrPhoneInput() {
-    return this.page.getByPlaceholder(/email/i).or(this.page.getByPlaceholder(/phone/i)).first();
+    return this.page.getByRole('textbox', { name: /email or phone/i });
   }
 
   get passwordInput() {
-    return this.page.getByPlaceholder(/password/i);
+    return this.page.getByRole('textbox', { name: /password/i });
   }
 
   get loginButton() {
@@ -22,13 +22,13 @@ export class LoginPage {
 
   get emailOrPhoneError() {
     const container = this.emailOrPhoneInput.locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]');
   }
 
   get passwordError() {
     // Password input is wrapped with show/hide button; error lives outside that wrapper
     const container = this.passwordInput.locator('..').locator('..');
-    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]').first();
+    return container.locator('small, .error, .text-red-500, .invalid-feedback, [role="alert"]');
   }
 
   get forgotPasswordLink() {
