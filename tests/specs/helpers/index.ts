@@ -1,13 +1,6 @@
 import { ShopPage } from '../../pages/shopPage';
-import { selectSriLanka } from '../../utils/selectCountry';
-import { Page } from '@playwright/test';
-
-async function closeCountryGate(page: Page) {
-  await selectSriLanka(page);
-}
 
 export async function getInStockProductSlug(shopPage: ShopPage): Promise<string | null> {
-  const page: Page = shopPage.page;
   await shopPage.open();
 
   const productCards = shopPage.productCards;
@@ -15,25 +8,20 @@ export async function getInStockProductSlug(shopPage: ShopPage): Promise<string 
   if (count === 0) return null;
 
   for (let i = 0; i < count; i++) {
-    const href = await productCards.nth(i).locator('a.product-name').getAttribute('href');
+    const card = productCards.nth(i);
+    const stockText = await card.innerText().catch(() => '');
+    if (!/in stock/i.test(stockText)) continue;
+
+    const href = await card.locator('a.product-name').getAttribute('href').catch(() => null);
     if (!href) continue;
-
-    const slug = href.replace('/product/', '');
-    await page.goto(href, { waitUntil: 'domcontentloaded' });
-    await closeCountryGate(page);
-    await page.waitForTimeout(1000);
-
-    const atcButton = page.getByRole('button', { name: /add to cart/i });
-    if (await atcButton.isVisible().catch(() => false) && await atcButton.isEnabled().catch(() => false)) {
-      return slug;
-    }
+    return href.replace('/product/', '');
   }
   return null;
 }
 
 export async function getFirstProductSlug(shopPage: ShopPage): Promise<string | null> {
   await shopPage.open();
-  const href = await shopPage.productCards.locator('a.product-name').first().getAttribute('href');
+  const href = await shopPage.productCards.locator('a.product-name').first().getAttribute('href').catch(() => null);
   if (!href) return null;
   return href.replace('/product/', '');
 }

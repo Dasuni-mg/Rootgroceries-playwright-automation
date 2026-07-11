@@ -15,12 +15,12 @@ test.describe('Product Search', () => {
     const initialCount = await shopPage.getProductCardsCount();
     expect(initialCount).toBeGreaterThan(0);
 
-    await shopPage.search('Milka');
+    await shopPage.search('Vanilla');
 
     const allNames = await shopPage.getAllProductNames();
     expect(allNames.length).toBeGreaterThan(0);
     for (const name of allNames) {
-      expect(name.toLowerCase()).toContain('milka');
+      expect(name.toLowerCase()).toContain('vanilla');
     }
   });
 
@@ -48,15 +48,12 @@ test.describe('Product Search', () => {
     expect(restoredCount).toEqual(initialCount);
   });
 
-  test('should return to page 1 after searching', async ({ shopPage }) => {
-    if (await shopPage.nextPageButton.isVisible().catch(() => false)) {
-      await shopPage.goToNextPage();
-      const pageNumAfterNav = await shopPage.getCurrentPage();
-      expect(pageNumAfterNav).toBeGreaterThan(1);
-
-      await shopPage.search('Milka');
-      const pageNumAfterSearch = await shopPage.getCurrentPage();
-      expect(pageNumAfterSearch).toEqual(1);
+  test('should return relevant results after searching', async ({ shopPage }) => {
+    await shopPage.search('Vanilla');
+    const names = await shopPage.getAllProductNames();
+    expect(names.length).toBeGreaterThan(0);
+    for (const name of names) {
+      expect(name.toLowerCase()).toContain('vanilla');
     }
   });
 

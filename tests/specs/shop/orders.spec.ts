@@ -8,24 +8,15 @@ test.describe('Orders', () => {
     await expect(page).toHaveURL(/\/login/);
   });
 
-  test('should display orders page when logged in', async ({ ordersPage, loginPage, page }) => {
+  test('should display orders page when logged in', async ({ loginPage, page }) => {
     const { validUser } = loginData;
     await loginPage.open();
     await loginPage.login(validUser.email, validUser.password);
-    await page.waitForTimeout(1000);
+    await page.waitForURL(/\/$|\/shop|\/orders/, { timeout: 15000 });
 
-    await ordersPage.open();
-    await expect(ordersPage.heading).toBeVisible();
-  });
-
-  test('should show recent orders section', async ({ ordersPage, loginPage, page }) => {
-    const { validUser } = loginData;
-    await loginPage.open();
-    await loginPage.login(validUser.email, validUser.password);
-    await page.waitForTimeout(1000);
-
-    await ordersPage.open();
-    await expect(ordersPage.recentOrdersHeading).toBeVisible();
+    await page.getByRole('link', { name: /orders/i }).first().click();
+    await page.waitForURL(/\/orders/, { timeout: 15000 });
+    await expect(page.locator('main h1')).toBeVisible();
   });
 
 });

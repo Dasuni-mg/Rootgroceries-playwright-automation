@@ -1,10 +1,10 @@
 import { test, expect } from '../../fixtures';
-import { getFirstProductSlug } from '../helpers';
+import { getInStockProductSlug } from '../helpers';
 
 test.describe('Cart', () => {
 
   test('should add a product to cart and validate it appears in cart @smoke', async ({ shopPage, productPage, cartPage, page }) => {
-    const slug = await getFirstProductSlug(shopPage);
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);
@@ -26,7 +26,7 @@ test.describe('Cart', () => {
   });
 
   test('should show cart count badge after adding product', async ({ shopPage, productPage, page }) => {
-    const slug = await getFirstProductSlug(shopPage);
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);

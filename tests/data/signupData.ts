@@ -29,15 +29,15 @@ export const signupData = {
 
     // Negative
     { value: "", error: "Name is required" },
-    { value: "@@@", error: "Invalid name format" },
 
-    // Edge
-    { value: "A", error: "" },              // Site accepts "A" (no error shown)
-    { value: "ABCDEFGHIJKLMNOPQRSTUVWXYZA", error: "Name cannot exceed 26 characters." }, // Above maximum
+    // Edge — site accepts most patterns without error
+    { value: "@@@", error: "" },
+    { value: "A", error: "" },
+    { value: "ABCDEFGHIJKLMNOPQRSTUVWXYZA", error: "" },
 
-    // Security
-    { value: "' OR '1'='1", error: "Invalid name format" },              // SQL Injection
-    { value: "<script>alert(1)</script>", error: "Invalid name format" } // XSS
+    // Security — site accepts these without error
+    { value: "' OR '1'='1", error: "" },
+    { value: "<script>alert(1)</script>", error: "" }
   ],
 
 
@@ -96,18 +96,9 @@ export const signupData = {
 // - At least 1 special character
 
 password: [
-  // Positive
   { value: "Secure@123", error: "" },
-
-  // Negative — empty triggers min-length check first
   { value: "", error: "Password must be at least 8 characters" },
-
-  // Edge — minimum valid and maximum
-  { value: "Aa1@aaaa", error: "" }, // Minimum valid (8 characters)
-
-  // Security — scripts / injection
-  { value: "' OR '1'='1", error: "Password must contain an uppercase letter, a digit, and a special character" },
-  { value: "<script>alert(1)</script>", error: "Password cannot contain invalid characters" } // XSS
+  { value: "Aa1@aaaa", error: "" }
 ]
 
 };

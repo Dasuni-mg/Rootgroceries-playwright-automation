@@ -53,7 +53,8 @@ export class ShopPage {
   async open() {
     await this.page.goto('/shop', { waitUntil: 'domcontentloaded' });
     await selectSriLanka(this.page);
-    await this.searchInput.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
+    await this.page.waitForTimeout(1000);
+    await this.productCards.first().waitFor({ state: 'visible', timeout: 15000 }).catch(() => {});
   }
 
   async closeCountryGateIfPresent() {

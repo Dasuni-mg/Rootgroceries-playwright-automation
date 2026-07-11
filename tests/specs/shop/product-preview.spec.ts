@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures';
-import { getFirstProductSlug } from '../helpers';
+import { getInStockProductSlug, getFirstProductSlug } from '../helpers';
 
 test.describe('Product Preview', () => {
 
@@ -26,7 +26,7 @@ test.describe('Product Preview', () => {
   });
 
   test('should increase and decrease quantity', async ({ shopPage, productPage, page }) => {
-    const slug = await getFirstProductSlug(shopPage);
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);
@@ -45,8 +45,8 @@ test.describe('Product Preview', () => {
     }
   });
 
-  test('should disable decrease button at minimum quantity', async ({ shopPage, productPage, page }) => {
-    const slug = await getFirstProductSlug(shopPage);
+  test('should disable decrease button at minimum quantity', async ({ shopPage, productPage }) => {
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);
@@ -57,7 +57,7 @@ test.describe('Product Preview', () => {
   });
 
   test('should see add to cart button', async ({ shopPage, productPage }) => {
-    const slug = await getFirstProductSlug(shopPage);
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);
@@ -66,7 +66,7 @@ test.describe('Product Preview', () => {
   });
 
   test('should navigate directly to product page via URL', async ({ shopPage, productPage, page }) => {
-    const slug = await getFirstProductSlug(shopPage);
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);
@@ -75,7 +75,7 @@ test.describe('Product Preview', () => {
   });
 
   test('should get full product info', async ({ shopPage, productPage }) => {
-    const slug = await getFirstProductSlug(shopPage);
+    const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
     await productPage.open(slug!);
