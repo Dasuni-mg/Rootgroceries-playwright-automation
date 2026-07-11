@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures';
-import { getInStockProductSlug } from '../helpers';
+import { getInStockProductSlug } from '../../helpers/helpers';
 
 test.describe('Cart', () => {
 
@@ -10,6 +10,7 @@ test.describe('Cart', () => {
     await productPage.open(slug!);
     await expect(productPage.addToCartButton).toBeVisible();
     await expect(productPage.addToCartButton).toBeEnabled();
+    const productName = (await productPage.productName.innerText()).trim();
     await productPage.addToCart();
 
     await cartPage.open();
@@ -17,10 +18,9 @@ test.describe('Cart', () => {
     const itemCount = await cartPage.getItemCount();
     expect(itemCount).toBeGreaterThan(0);
 
-    const productName = await productPage.productName.innerText();
     const itemNames = await cartPage.getItemNames();
     const found = itemNames.some((name) =>
-      name.toLowerCase().includes(productName.toLowerCase())
+      name.trim().toLowerCase().includes(productName.toLowerCase())
     );
     expect(found).toBe(true);
   });

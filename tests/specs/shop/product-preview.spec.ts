@@ -1,5 +1,5 @@
 import { test, expect } from '../../fixtures';
-import { getInStockProductSlug, getFirstProductSlug } from '../helpers';
+import { getInStockProductSlug, getFirstProductSlug } from '../../helpers/helpers';
 
 test.describe('Product Preview', () => {
 

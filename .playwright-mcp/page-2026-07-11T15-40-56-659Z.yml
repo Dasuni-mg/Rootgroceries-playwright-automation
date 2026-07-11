@@ -1,0 +1,294 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Roots Groceries home" [ref=e6] [cursor=pointer]:
+        - /url: /
+      - navigation "Main navigation" [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Shop All" [ref=e10] [cursor=pointer]:
+          - /url: /shop
+        - link "Orders" [ref=e11] [cursor=pointer]:
+          - /url: /orders
+        - link "Account" [ref=e12] [cursor=pointer]:
+          - /url: /account
+      - generic [ref=e13]:
+        - link "View cart with 0 items" [ref=e14] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=e19]: Cart
+          - generic [ref=e20]: "0"
+        - link "M.G" [ref=e21] [cursor=pointer]:
+          - /url: /account
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - complementary [ref=e24]:
+        - heading "Shop All" [level=2] [ref=e25]
+        - generic [ref=e26]:
+          - textbox "Search groceries" [ref=e27]
+          - button "Search" [ref=e28] [cursor=pointer]
+        - generic [ref=e33]:
+          - generic [ref=e34]: Category
+          - combobox "Category" [ref=e35]:
+            - option "All categories" [selected]
+            - option "Beverages"
+            - option "Cake & Baking"
+            - option "Chocolates & Sweets"
+            - option "Chutney & Sauce Product List"
+            - option "Coconut Products"
+            - option "Coffee & Tea Products"
+            - option "Cookie Products"
+            - option "Curry & Curry Mixes Paste"
+            - option "Dairy Products"
+            - option "Dried Soya & Dehydrated"
+            - option "Dry Fish"
+            - option "Flour & Flour Mixes"
+            - option "Fresh Fish & Canned Fish"
+            - option "Fresh Vegetables"
+            - option "Fried Fish"
+            - option "Game Board"
+            - option "Health and beauty"
+            - option "Healthy Drinks"
+            - option "Incense"
+            - option "Jam & Spreads"
+            - option "Kitchenware"
+            - option "Noodles"
+            - option "Nutrition Drinks"
+            - option "Papadam"
+            - option "Rice & Grains"
+            - option "SPECIALS"
+            - option "Sambal"
+            - option "Snacks & Sweets"
+            - option "Spices & Seasoning"
+            - option "Treacles & Jaggery"
+            - option "Vegetable in Brine"
+        - generic [ref=e36]:
+          - generic [ref=e37]: Sort
+          - combobox "Sort" [ref=e38]:
+            - option "Newest" [selected]
+            - option "Price low to high"
+            - option "Price high to low"
+            - option "Name"
+        - generic [ref=e39]:
+          - checkbox "In stock only" [ref=e40]
+          - text: In stock only
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - generic [ref=e44]: Sri Lankan catalog
+            - heading "Groceries" [level=1] [ref=e45]
+          - generic [ref=e46]: 284 items
+        - generic [ref=e47]:
+          - article [ref=e48]:
+            - link "Divine Supplies Carrom Board 30" [ref=e49] [cursor=pointer]:
+              - /url: /product/divine-supplies-carrom-board-30-2
+              - img "Divine Supplies Carrom Board 30" [ref=e50]
+            - generic [ref=e51]:
+              - generic [ref=e52]: Game Board
+              - link "Divine Supplies Carrom Board 30" [ref=e53] [cursor=pointer]:
+                - /url: /product/divine-supplies-carrom-board-30-2
+              - generic [ref=e54]:
+                - generic [ref=e55]: US$89.00
+                - generic [ref=e57]: 30 inch
+              - generic [ref=e58]:
+                - generic [ref=e59]: Out of stock
+                - generic [ref=e60]: Native to Sri Lanka
+              - button [disabled] [ref=e61]
+          - article [ref=e66]:
+            - link "Unicom Polos Melluma" [ref=e67] [cursor=pointer]:
+              - /url: /product/unicom-polos-melluma
+              - img "Product image" [ref=e68]
+            - generic [ref=e69]:
+              - generic [ref=e70]: Vegetable in Brine
+              - link "Unicom Polos Melluma" [ref=e71] [cursor=pointer]:
+                - /url: /product/unicom-polos-melluma
+              - generic [ref=e72]:
+                - generic [ref=e73]: US$3.99
+                - generic [ref=e75]: 560g jar
+              - generic [ref=e76]:
+                - generic [ref=e77]: In stock
+                - generic [ref=e78]: Native to Sri Lanka
+              - button [ref=e79] [cursor=pointer]
+          - article [ref=e84]:
+            - link "Unicom Lotus Roots" [ref=e85] [cursor=pointer]:
+              - /url: /product/unicom-lotus-roots
+              - img "Unicom Lotus Roots" [ref=e86]
+            - generic [ref=e87]:
+              - generic [ref=e88]: Vegetable in Brine
+              - link "Unicom Lotus Roots" [ref=e89] [cursor=pointer]:
+                - /url: /product/unicom-lotus-roots
+              - generic [ref=e90]:
+                - generic [ref=e91]: US$3.99
+                - generic [ref=e93]: 560g jar
+              - generic [ref=e94]:
+                - generic [ref=e95]: In stock
+                - generic [ref=e96]: Native to Sri Lanka
+              - button [ref=e97] [cursor=pointer]
+          - article [ref=e102]:
+            - link "Unicom Jack Madulu" [ref=e103] [cursor=pointer]:
+              - /url: /product/unicom-jack-madulu
+              - img "Unicom Jack Madulu" [ref=e104]
+            - generic [ref=e105]:
+              - generic [ref=e106]: Vegetable in Brine
+              - link "Unicom Jack Madulu" [ref=e107] [cursor=pointer]:
+                - /url: /product/unicom-jack-madulu
+              - generic [ref=e108]:
+                - generic [ref=e109]: US$3.99
+                - generic [ref=e111]: 560g jar
+              - generic [ref=e112]:
+                - generic [ref=e113]: In stock
+                - generic [ref=e114]: Native to Sri Lanka
+              - button [ref=e115] [cursor=pointer]
+          - article [ref=e120]:
+            - link "Unicom Roots In Brine 560g" [ref=e121] [cursor=pointer]:
+              - /url: /product/unicom-roots-in-brine-560g
+              - img "Unicom Roots In Brine 560g" [ref=e122]
+            - generic [ref=e123]:
+              - generic [ref=e124]: Vegetable in Brine
+              - link "Unicom Roots In Brine 560g" [ref=e125] [cursor=pointer]:
+                - /url: /product/unicom-roots-in-brine-560g
+              - generic [ref=e126]:
+                - generic [ref=e127]: US$3.99
+                - generic [ref=e129]: 560g jar
+              - generic [ref=e130]:
+                - generic [ref=e131]: In stock
+                - generic [ref=e132]: Native to Sri Lanka
+              - button [ref=e133] [cursor=pointer]
+          - article [ref=e138]:
+            - link "Unicom Kohila Dalu 560g" [ref=e139] [cursor=pointer]:
+              - /url: /product/unicom-kohila-dalu-560g
+              - img "Unicom Kohila Dalu 560g" [ref=e140]
+            - generic [ref=e141]:
+              - generic [ref=e142]: Vegetable in Brine
+              - link "Unicom Kohila Dalu 560g" [ref=e143] [cursor=pointer]:
+                - /url: /product/unicom-kohila-dalu-560g
+              - generic [ref=e144]:
+                - generic [ref=e145]: US$3.99
+                - generic [ref=e147]: 560g jar
+              - generic [ref=e148]:
+                - generic [ref=e149]: Out of stock
+                - generic [ref=e150]: Native to Sri Lanka
+              - button [disabled] [ref=e151]
+          - article [ref=e156]:
+            - link "UNICOM Drumstick In Brine 560g" [ref=e157] [cursor=pointer]:
+              - /url: /product/unicom-drumstick-in-brine-560g
+              - img "UNICOM Drumstick In Brine 560g" [ref=e158]
+            - generic [ref=e159]:
+              - generic [ref=e160]: Vegetable in Brine
+              - link "UNICOM Drumstick In Brine 560g" [ref=e161] [cursor=pointer]:
+                - /url: /product/unicom-drumstick-in-brine-560g
+              - generic [ref=e162]:
+                - generic [ref=e163]: US$3.99
+                - generic [ref=e165]: 560g jar
+              - generic [ref=e166]:
+                - generic [ref=e167]: In stock
+                - generic [ref=e168]: Native to Sri Lanka
+              - button [ref=e169] [cursor=pointer]
+          - article [ref=e174]:
+            - link "Whole Raw Cashews 1lbs" [ref=e175] [cursor=pointer]:
+              - /url: /product/whole-raw-cashews-1lbs-2
+              - img "Whole Raw Cashews 1lbs" [ref=e176]
+            - generic [ref=e177]:
+              - generic [ref=e178]: Cake & Baking
+              - link "Whole Raw Cashews 1lbs" [ref=e179] [cursor=pointer]:
+                - /url: /product/whole-raw-cashews-1lbs-2
+              - generic [ref=e180]:
+                - generic [ref=e181]: US$6.99
+                - generic [ref=e183]: 1LB
+              - generic [ref=e184]:
+                - generic [ref=e185]: In stock
+                - generic [ref=e186]: Native to Sri Lanka
+              - button [ref=e187] [cursor=pointer]
+          - article [ref=e192]:
+            - link "Star Brand Vanilla Flavour 28ml" [ref=e193] [cursor=pointer]:
+              - /url: /product/star-brand-vanilla-flavour-28ml
+              - img "Star Brand Vanilla Flavour 28ml" [ref=e194]
+            - generic [ref=e195]:
+              - generic [ref=e196]: Cake & Baking
+              - link "Star Brand Vanilla Flavour 28ml" [ref=e197] [cursor=pointer]:
+                - /url: /product/star-brand-vanilla-flavour-28ml
+              - generic [ref=e198]:
+                - generic [ref=e199]: US$2.19
+                - generic [ref=e201]: 28ml bottle
+              - generic [ref=e202]:
+                - generic [ref=e203]: In stock
+                - generic [ref=e204]: Native to Sri Lanka
+              - button [ref=e205] [cursor=pointer]
+          - article [ref=e210]:
+            - link "Star Brand Rose Flavour 28ml" [ref=e211] [cursor=pointer]:
+              - /url: /product/star-brand-rose-flavour-28ml
+              - img "Star Brand Rose Flavour 28ml" [ref=e212]
+            - generic [ref=e213]:
+              - generic [ref=e214]: Cake & Baking
+              - link "Star Brand Rose Flavour 28ml" [ref=e215] [cursor=pointer]:
+                - /url: /product/star-brand-rose-flavour-28ml
+              - generic [ref=e216]:
+                - generic [ref=e217]: US$2.19
+                - generic [ref=e219]: 28ml bottle
+              - generic [ref=e220]:
+                - generic [ref=e221]: In stock
+                - generic [ref=e222]: Native to Sri Lanka
+              - button [ref=e223] [cursor=pointer]
+          - article [ref=e228]:
+            - link "Star Brand Almond Flavour 28ml" [ref=e229] [cursor=pointer]:
+              - /url: /product/star-brand-almond-flavour-28ml
+              - img "Star Brand Almond Flavour 28ml" [ref=e230]
+            - generic [ref=e231]:
+              - generic [ref=e232]: Cake & Baking
+              - link "Star Brand Almond Flavour 28ml" [ref=e233] [cursor=pointer]:
+                - /url: /product/star-brand-almond-flavour-28ml
+              - generic [ref=e234]:
+                - generic [ref=e235]: US$2.19
+                - generic [ref=e237]: 28ml bottle
+              - generic [ref=e238]:
+                - generic [ref=e239]: In stock
+                - generic [ref=e240]: Native to Sri Lanka
+              - button [ref=e241] [cursor=pointer]
+          - article [ref=e246]:
+            - link "MD Pumpkin Preserve 490ml" [ref=e247] [cursor=pointer]:
+              - /url: /product/md-pumpkin-preserve-490ml
+              - img "MD Pumpkin Preserve 490ml" [ref=e248]
+            - generic [ref=e249]:
+              - generic [ref=e250]: Cake & Baking
+              - link "MD Pumpkin Preserve 490ml" [ref=e251] [cursor=pointer]:
+                - /url: /product/md-pumpkin-preserve-490ml
+              - generic [ref=e252]:
+                - generic [ref=e253]: US$3.99
+                - generic [ref=e255]: 490ml jar
+              - generic [ref=e256]:
+                - generic [ref=e257]: In stock
+                - generic [ref=e258]: Native to Sri Lanka
+              - button [ref=e259] [cursor=pointer]
+        - generic [ref=e264]:
+          - button "Previous" [disabled] [ref=e265]
+          - generic [ref=e267]: 1 / 24
+          - button "Next" [ref=e268] [cursor=pointer]
+  - contentinfo [ref=e270]:
+    - generic [ref=e271]:
+      - generic [ref=e272]:
+        - link "Roots Groceries home" [ref=e273] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e276]:
+            - strong [ref=e277]: Roots
+            - generic [ref=e278]: Groceries
+        - paragraph [ref=e279]: Flavors of South Asia, curated for a modern Sri Lankan pantry.
+      - generic [ref=e280]:
+        - heading "Shop" [level=3] [ref=e281]
+        - link "All groceries" [ref=e282] [cursor=pointer]:
+          - /url: /shop
+        - link "Cart" [ref=e283] [cursor=pointer]:
+          - /url: /cart
+        - link "Orders" [ref=e284] [cursor=pointer]:
+          - /url: /orders
+      - generic [ref=e285]:
+        - heading "Service" [level=3] [ref=e286]
+        - generic [ref=e287]: Islandwide delivery
+        - generic [ref=e293]: Fresh stock checks
+        - generic [ref=e299]: Cash on delivery
+        - generic [ref=e303]: Secure checkout
+      - generic [ref=e307]:
+        - heading "Company" [level=3] [ref=e308]
+        - link "Contact us" [ref=e309] [cursor=pointer]:
+          - /url: /contact
+        - link "Privacy Policy" [ref=e310] [cursor=pointer]:
+          - /url: /privacy
+    - generic [ref=e311]: © 2026 Roots Groceries

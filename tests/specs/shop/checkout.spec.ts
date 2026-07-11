@@ -1,7 +1,7 @@
 import { test, expect } from '../../fixtures';
 import { loginData } from '../../data/loginData';
 import { onepayCards, checkoutAddress } from '../../data/checkoutData';
-import { getInStockProductSlug } from '../helpers';
+import { getInStockProductSlug } from '../../helpers/helpers';
 
 test.describe('Checkout', () => {
 
