@@ -43,7 +43,7 @@ export class CartPage {
   }
 
   get checkoutButton() {
-    return this.page.getByRole('button', { name: /proceed to checkout|checkout/i });
+    return this.page.getByRole('link', { name: /proceed to checkout/i });
   }
 
   get continueShoppingButton() {

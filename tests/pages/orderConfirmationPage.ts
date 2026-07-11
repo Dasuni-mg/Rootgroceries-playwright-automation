@@ -2,7 +2,9 @@ import { Page } from '@playwright/test';
 
 export interface OrderConfirmationInfo {
   orderNumber: string;
-  successMessage: string;
+  status: string;
+  paymentMethod: string;
+  paymentStatus: string;
 }
 
 export class OrderConfirmationPage {
@@ -12,41 +14,53 @@ export class OrderConfirmationPage {
     this.page = page;
   }
 
-  get confirmationContainer() {
-    return this.page.locator('main').locator('section, div').filter({ hasText: /order|thank you|confirmation/i }).first();
+  get orderNumberHeading() {
+    return this.page.locator('main h1');
   }
 
-  get successHeading() {
-    return this.page.getByRole('heading', { name: /thank you|order confirmed|order placed|success/i });
+  get orderStatusBadge() {
+    return this.page.locator('main').getByText(/placed|confirmed|processing|delivered|cancelled/i).first();
   }
 
-  get orderNumberElement() {
-    return this.page.locator('main').getByText(/#\d+|order.*\d{3,}|ref.*\d{3,}/i).first();
+  get paymentMethod() {
+    return this.page.locator('main').getByText(/cash on delivery|card|credit|visa|master/i).first();
   }
 
-  get orderNumber() {
-    return this.page.locator('[class*="order-number"], [class*="order-ref"], strong:has-text("#")').first();
+  get paymentStatus() {
+    return this.page.locator('main').getByText(/pending|paid|completed/i).first();
+  }
+
+  get deliveryAddress() {
+    return this.page.locator('main').getByText(/delivery address/i);
+  }
+
+  get orderItems() {
+    return this.page.locator('main').getByText(/order items/i);
   }
 
   async waitForConfirmation(timeout = 30000) {
-    await this.successHeading.waitFor({ state: 'visible', timeout });
-    await this.page.waitForURL(/\/order\/|\/confirmation|\/thank-you|\/success/i, { timeout }).catch(() => {});
+    await this.page.waitForURL(/\/order\//, { timeout }).catch(() => {});
+    await this.orderNumberHeading.waitFor({ state: 'visible', timeout });
   }
 
   async getOrderNumberText(): Promise<string> {
-    const text = await this.orderNumber.textContent().catch(() => '');
-    const text2 = await this.orderNumberElement.textContent().catch(() => '');
-    return text || text2 || '';
+    return (await this.orderNumberHeading.textContent()) || '';
   }
 
-  async getSuccessMessage(): Promise<string> {
-    return (await this.successHeading.textContent().catch(() => '')) || '';
+  async getStatus(): Promise<string> {
+    return (await this.orderStatusBadge.textContent()) || '';
+  }
+
+  async getPaymentMethod(): Promise<string> {
+    return (await this.paymentMethod.textContent()) || '';
   }
 
   async getConfirmationInfo(): Promise<OrderConfirmationInfo> {
     return {
       orderNumber: await this.getOrderNumberText(),
-      successMessage: await this.getSuccessMessage(),
+      status: await this.getStatus(),
+      paymentMethod: await this.getPaymentMethod(),
+      paymentStatus: (await this.paymentStatus.textContent().catch(() => '')) || '',
     };
   }
 }

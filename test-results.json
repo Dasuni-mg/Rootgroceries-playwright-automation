@@ -5,9 +5,10 @@
       "D:\\Rootgroceries playwright automation\\node_modules\\@playwright\\test\\cli.js",
       "test",
       "--project=chromium",
-      "-g",
-      "should add a product to cart",
+      "--grep",
+      "checkout and validate",
       "--workers=1",
+      "--timeout=120000",
       "--trace=on"
     ],
     "configFile": "D:\\Rootgroceries playwright automation\\playwright.config.ts",
@@ -40,7 +41,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 30000
+        "timeout": 120000
       }
     ],
     "quiet": false,
@@ -76,27 +77,27 @@
   },
   "suites": [
     {
-      "title": "shop\\cart.spec.ts",
-      "file": "shop/cart.spec.ts",
+      "title": "shop\\checkout.spec.ts",
+      "file": "shop/checkout.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Cart",
-          "file": "shop/cart.spec.ts",
-          "line": 3,
+          "title": "Checkout",
+          "file": "shop/checkout.spec.ts",
+          "line": 5,
           "column": 6,
           "specs": [
             {
-              "title": "should add a product to cart and validate it appears in cart @smoke",
+              "title": "should complete checkout and validate order confirmation @smoke",
               "ok": true,
               "tags": [
                 "smoke"
               ],
               "tests": [
                 {
-                  "timeout": 30000,
+                  "timeout": 120000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -106,18 +107,18 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 29801,
+                      "duration": 58695,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-10T03:33:22.408Z",
+                      "startTime": "2026-07-10T03:40:54.967Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-add--eb257-te-it-appears-in-cart-smoke-chromium\\trace.zip"
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-checkout-Checkout-sho-0d5bf-te-order-confirmation-smoke-chromium\\trace.zip"
                         }
                       ]
                     }
@@ -125,9 +126,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "89af35a32f2b96464e99-cf75119a973d62ae5350",
-              "file": "shop/cart.spec.ts",
-              "line": 5,
+              "id": "64d960228790d004814c-ebefd4b4da6333e7077d",
+              "file": "shop/checkout.spec.ts",
+              "line": 7,
               "column": 7
             }
           ]
@@ -137,8 +138,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-10T03:33:21.187Z",
-    "duration": 48221.395000000004,
+    "startTime": "2026-07-10T03:40:53.767Z",
+    "duration": 60824.88,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

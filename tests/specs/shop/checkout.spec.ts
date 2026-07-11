@@ -1,16 +1,10 @@
 import { test, expect } from '../../fixtures';
 import { loginData } from '../../data/loginData';
-
-const ONEPAY_CARDS = {
-  visa1: { cardNumber: '4508750015741019', expiry: '01/39', cvv: '100' },
-  visa2: { cardNumber: '4012000033330026', expiry: '01/39', cvv: '100' },
-  master1: { cardNumber: '5123450000000008', expiry: '01/39', cvv: '100' },
-  master2: { cardNumber: '5111111111111118', expiry: '01/39', cvv: '100' },
-};
+import { onepayCards, checkoutAddress } from '../../data/checkoutData';
 
 test.describe('Checkout', () => {
 
-  test('should complete checkout with OnePay Visa card @smoke', async ({
+  test('should complete checkout and validate order confirmation @smoke', async ({
     page, shopPage, productPage, cartPage, checkoutPage, orderConfirmationPage, loginPage
   }) => {
     const { validUser } = loginData;
@@ -24,47 +18,62 @@ test.describe('Checkout', () => {
     const productCount = await shopPage.productCards.count();
     expect(productCount).toBeGreaterThan(0);
 
-    const productNames = await shopPage.productCards.locator('a.product-name').allInnerTexts();
-    await page.getByRole('link', { name: productNames[0] }).and(page.locator('.product-name')).click();
+    const productCards = shopPage.productCards;
+    const productNames = await productCards.locator('a.product-name').allInnerTexts();
+    let selectedProduct: string | null = null;
 
-    await productPage.waitForPageLoaded();
+    for (let i = 0; i < productNames.length; i++) {
+      await page.getByRole('link', { name: productNames[i] }).and(page.locator('.product-name')).click();
+      await productPage.waitForPageLoaded();
+      if (await productPage.addToCartButton.isEnabled()) {
+        selectedProduct = productNames[i];
+        break;
+      }
+      await page.goBack();
+      await page.waitForTimeout(500);
+    }
+    expect(selectedProduct).toBeTruthy();
+
     await productPage.addToCart();
 
     await cartPage.open();
     await expect(cartPage.cartLayout).toBeVisible();
-
-    const itemCount = await cartPage.getItemCount();
-    expect(itemCount).toBeGreaterThan(0);
+    expect(await cartPage.getItemCount()).toBeGreaterThan(0);
 
     await cartPage.proceedToCheckout();
 
     await expect(page).toHaveURL(/\/checkout/, { timeout: 15000 });
     await expect(checkoutPage.checkoutLayout).toBeVisible({ timeout: 10000 });
 
-    if (await checkoutPage.fullNameInput.isVisible().catch(() => false)) {
-      await checkoutPage.fillContactInfo(validUser.email.split('@')[0], validUser.email, '0771234567');
-    }
+    await checkoutPage.fillAddress(checkoutAddress.addressLine1, checkoutAddress.city, checkoutAddress.district, checkoutAddress.postalCode);
+    await checkoutPage.fillContact(checkoutAddress.phone);
+    await checkoutPage.selectDeliveryWindow('09:00-12:00');
 
-    if (await checkoutPage.addressInput.isVisible().catch(() => false)) {
-      await checkoutPage.fillShippingAddress('123 Main Street', 'Colombo');
-    }
+    const paymentFrames = await checkoutPage.paymentFrames;
+    const card = onepayCards.visa1;
 
-    const card = ONEPAY_CARDS.visa1;
-    await checkoutPage.fillCardDetails(card.cardNumber, card.expiry, card.cvv);
+    if (paymentFrames.length > 0) {
+      await checkoutPage.fillCardDetails(card.cardNumber, card.expiry, card.cvv);
+    } else {
+      const cardInputs = checkoutPage.page.locator('input[name="cardnumber"], input[name="card-number"]');
+      if (await cardInputs.first().isVisible().catch(() => false)) {
+        await checkoutPage.fillCardDetails(card.cardNumber, card.expiry, card.cvv);
+      }
+    }
 
     await checkoutPage.placeOrder();
 
-    const confirmed = await orderConfirmationPage.successHeading.isVisible({ timeout: 30000 }).catch(() => false);
-    if (!confirmed) {
-      const url = page.url();
-      expect(url).toMatch(/order|confirmation|thank.you|success/i);
-    } else {
-      const info = await orderConfirmationPage.getConfirmationInfo();
-      expect(info.successMessage).toBeTruthy();
-    }
+    await orderConfirmationPage.waitForConfirmation(30000);
+
+    const info = await orderConfirmationPage.getConfirmationInfo();
+    expect(info.orderNumber).toMatch(/rg-\d+/i);
+    expect(info.status).toMatch(/placed/i);
+    expect(info.paymentMethod).toBeTruthy();
+
+    expect(await cartPage.getItemCount()).toBe(0);
   });
 
-  test('should complete checkout with OnePay Mastercard', async ({
+  test('should complete checkout with Mastercard and validate order', async ({
     page, shopPage, productPage, cartPage, checkoutPage, orderConfirmationPage, loginPage
   }) => {
     const { validUser } = loginData;
@@ -76,9 +85,20 @@ test.describe('Checkout', () => {
     await shopPage.open();
 
     const productNames = await shopPage.productCards.locator('a.product-name').allInnerTexts();
-    await page.getByRole('link', { name: productNames[0] }).and(page.locator('.product-name')).click();
+    let selectedProduct: string | null = null;
 
-    await productPage.waitForPageLoaded();
+    for (let i = 0; i < productNames.length; i++) {
+      await page.getByRole('link', { name: productNames[i] }).and(page.locator('.product-name')).click();
+      await productPage.waitForPageLoaded();
+      if (await productPage.addToCartButton.isEnabled()) {
+        selectedProduct = productNames[i];
+        break;
+      }
+      await page.goBack();
+      await page.waitForTimeout(500);
+    }
+    expect(selectedProduct).toBeTruthy();
+
     await productPage.addToCart();
 
     await cartPage.open();
@@ -86,25 +106,31 @@ test.describe('Checkout', () => {
 
     await expect(checkoutPage.checkoutLayout).toBeVisible({ timeout: 10000 });
 
-    if (await checkoutPage.fullNameInput.isVisible().catch(() => false)) {
-      await checkoutPage.fillContactInfo(validUser.email.split('@')[0], validUser.email, '0771234567');
+    await checkoutPage.fillAddress(checkoutAddress.addressLine1, checkoutAddress.city, checkoutAddress.district, checkoutAddress.postalCode);
+    await checkoutPage.fillContact(checkoutAddress.phone);
+    await checkoutPage.selectDeliveryWindow('09:00-12:00');
+
+    const card = onepayCards.master1;
+    const paymentFrames = await checkoutPage.paymentFrames;
+    if (paymentFrames.length > 0) {
+      await checkoutPage.fillCardDetails(card.cardNumber, card.expiry, card.cvv);
+    } else {
+      const cardInputs = checkoutPage.page.locator('input[name="cardnumber"]');
+      if (await cardInputs.first().isVisible().catch(() => false)) {
+        await checkoutPage.fillCardDetails(card.cardNumber, card.expiry, card.cvv);
+      }
     }
 
-    if (await checkoutPage.addressInput.isVisible().catch(() => false)) {
-      await checkoutPage.fillShippingAddress('123 Main Street', 'Colombo');
-    }
-
-    const card = ONEPAY_CARDS.master1;
-    await checkoutPage.fillCardDetails(card.cardNumber, card.expiry, card.cvv);
     await checkoutPage.placeOrder();
 
-    const confirmed = await orderConfirmationPage.successHeading.isVisible({ timeout: 30000 }).catch(() => false);
-    if (!confirmed) {
-      expect(page.url()).toMatch(/order|confirmation|thank.you|success/i);
-    } else {
-      const info = await orderConfirmationPage.getConfirmationInfo();
-      expect(info.successMessage).toBeTruthy();
-    }
+    await orderConfirmationPage.waitForConfirmation(30000);
+
+    const info = await orderConfirmationPage.getConfirmationInfo();
+    expect(info.orderNumber).toMatch(/rg-\d+/i);
+    expect(info.status).toMatch(/placed/i);
+    expect(info.paymentMethod).toBeTruthy();
+
+    expect(await cartPage.getItemCount()).toBe(0);
   });
 
 });
