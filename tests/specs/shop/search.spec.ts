@@ -11,7 +11,7 @@ test.describe('Product Search', () => {
     await expect(shopPage.searchInput).toHaveAttribute('placeholder', 'Search groceries');
   });
 
-  test('should filter products by search query @regression', async ({ shopPage }) => {
+  test('should filter products by search query @smoke @regression', async ({ shopPage }) => {
     const initialCount = await shopPage.getProductCardsCount();
     expect(initialCount).toBeGreaterThan(0);
 

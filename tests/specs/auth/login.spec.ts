@@ -8,7 +8,7 @@ test.describe('Login Feature', () => {
     await loginPage.open();
   });
 
-  test('Login with valid credentials @regression', async ({ loginPage }) => {
+  test('Login with valid credentials @smoke @regression', async ({ loginPage }) => {
     const { validUser } = loginData;
 
     await loginPage.login(validUser.email, validUser.password);

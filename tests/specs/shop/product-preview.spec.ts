@@ -3,7 +3,7 @@ import { getInStockProductSlug, getFirstProductSlug } from '../helpers';
 
 test.describe('Product Preview', () => {
 
-  test('should navigate to product detail when clicking a product name @regression', async ({ shopPage, productPage }) => {
+  test('should navigate to product detail when clicking a product name @smoke @regression', async ({ shopPage, productPage }) => {
     const slug = await getFirstProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
