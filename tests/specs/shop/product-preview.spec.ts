@@ -3,7 +3,7 @@ import { getInStockProductSlug, getFirstProductSlug } from '../helpers';
 
 test.describe('Product Preview', () => {
 
-  test('should navigate to product detail when clicking a product name', async ({ shopPage, productPage }) => {
+  test('should navigate to product detail when clicking a product name @regression', async ({ shopPage, productPage }) => {
     const slug = await getFirstProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -13,7 +13,7 @@ test.describe('Product Preview', () => {
     expect(detailName).toBeTruthy();
   });
 
-  test('should display product price and stock status', async ({ shopPage, productPage }) => {
+  test('should display product price and stock status @regression', async ({ shopPage, productPage }) => {
     const slug = await getFirstProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -25,7 +25,7 @@ test.describe('Product Preview', () => {
     await expect(productPage.stockStatus).toBeVisible();
   });
 
-  test('should increase and decrease quantity', async ({ shopPage, productPage, page }) => {
+  test('should increase and decrease quantity @regression', async ({ shopPage, productPage, page }) => {
     const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -56,7 +56,7 @@ test.describe('Product Preview', () => {
     }
   });
 
-  test('should see add to cart button', async ({ shopPage, productPage }) => {
+  test('should see add to cart button @regression', async ({ shopPage, productPage }) => {
     const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -65,7 +65,7 @@ test.describe('Product Preview', () => {
     await expect(productPage.addToCartButton).toBeEnabled();
   });
 
-  test('should navigate directly to product page via URL', async ({ shopPage, productPage, page }) => {
+  test('should navigate directly to product page via URL @regression', async ({ shopPage, productPage, page }) => {
     const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -74,7 +74,7 @@ test.describe('Product Preview', () => {
     await expect(page).toHaveURL(new RegExp(`/product/${slug}$`));
   });
 
-  test('should get full product info', async ({ shopPage, productPage }) => {
+  test('should get full product info @regression', async ({ shopPage, productPage }) => {
     const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 

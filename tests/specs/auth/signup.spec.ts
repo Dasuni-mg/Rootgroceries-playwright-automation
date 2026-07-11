@@ -51,7 +51,7 @@ test.describe('Signup Page', () => {
   //   await expect(page).toHaveURL('/login');
   // });
 
-  test.describe('Username Validation', () => {
+  test.describe('Username Validation @regression', () => {
     signupData.username.forEach((data: { value: string; error: string }) => {
       test(`Username: ${data.value || 'Empty Username'}`, async ({ signupPage }) => {
         await signupPage.fillSignupForm(
@@ -72,7 +72,7 @@ test.describe('Signup Page', () => {
     });
   });
 
-  test.describe('Email Validation', () => {
+  test.describe('Email Validation @regression', () => {
     signupData.email.forEach((data: { value: string; error: string }) => {
       test(`Email: ${data.value || 'Empty Email'}`, async ({ signupPage }) => {
         await signupPage.fillSignupForm(

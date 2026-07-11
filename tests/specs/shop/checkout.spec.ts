@@ -5,7 +5,7 @@ import { getInStockProductSlug } from '../helpers';
 
 test.describe('Checkout', () => {
 
-  test('should complete checkout and validate order confirmation @smoke', async ({
+  test('should complete checkout and validate order confirmation @smoke @regression', async ({
     page, shopPage, productPage, cartPage, checkoutPage, orderConfirmationPage, loginPage
   }) => {
     const { validUser } = loginData;
@@ -58,7 +58,7 @@ test.describe('Checkout', () => {
     expect(await cartPage.getItemCount()).toBe(0);
   });
 
-  test('should complete checkout with Mastercard and validate order', async ({
+  test('should complete checkout with Mastercard and validate order @regression', async ({
     page, shopPage, productPage, cartPage, checkoutPage, orderConfirmationPage, loginPage
   }) => {
     const { validUser } = loginData;

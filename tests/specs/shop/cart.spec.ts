@@ -3,7 +3,7 @@ import { getInStockProductSlug } from '../helpers';
 
 test.describe('Cart', () => {
 
-  test('should add a product to cart and validate it appears in cart @smoke', async ({ shopPage, productPage, cartPage, page }) => {
+  test('should add a product to cart and validate it appears in cart @smoke @regression', async ({ shopPage, productPage, cartPage, page }) => {
     const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -25,7 +25,7 @@ test.describe('Cart', () => {
     expect(found).toBe(true);
   });
 
-  test('should show cart count badge after adding product', async ({ shopPage, productPage, page }) => {
+  test('should show cart count badge after adding product @regression', async ({ shopPage, productPage, page }) => {
     const slug = await getInStockProductSlug(shopPage);
     expect(slug).toBeTruthy();
 
@@ -38,7 +38,7 @@ test.describe('Cart', () => {
     expect(parseInt(countText, 10)).toBeGreaterThan(0);
   });
 
-  test('should show empty cart state when no items have been added', async ({ cartPage }) => {
+  test('should show empty cart state when no items have been added @regression', async ({ cartPage }) => {
     await cartPage.open();
 
     const isEmpty = await cartPage.isCartEmpty();

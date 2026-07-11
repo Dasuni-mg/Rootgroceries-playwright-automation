@@ -6,15 +6,15 @@ test.describe('Shop Filter & Sort', () => {
     await shopPage.open();
   });
 
-  test('should display category filter', async ({ shopPage }) => {
+  test('should display category filter @regression', async ({ shopPage }) => {
     await expect(shopPage.categorySelect).toBeVisible();
   });
 
-  test('should display sort options', async ({ shopPage }) => {
+  test('should display sort options @regression', async ({ shopPage }) => {
     await expect(shopPage.sortSelect).toBeVisible();
   });
 
-  test('should filter products by category', async ({ shopPage }) => {
+  test('should filter products by category @regression', async ({ shopPage }) => {
     const initialCount = await shopPage.getProductCardsCount();
     expect(initialCount).toBeGreaterThan(0);
 
@@ -25,7 +25,7 @@ test.describe('Shop Filter & Sort', () => {
     expect(names.length).toBeGreaterThanOrEqual(0);
   });
 
-  test('should sort products by price low to high', async ({ shopPage }) => {
+  test('should sort products by price low to high @regression', async ({ shopPage }) => {
     await shopPage.selectSort('price');
     await shopPage.page.waitForTimeout(500);
 
@@ -33,7 +33,7 @@ test.describe('Shop Filter & Sort', () => {
     expect(count).toBeGreaterThan(0);
   });
 
-  test('should sort products by name', async ({ shopPage, page }) => {
+  test('should sort products by name @regression', async ({ shopPage, page }) => {
     await shopPage.selectSort('name');
     await page.waitForTimeout(500);
 

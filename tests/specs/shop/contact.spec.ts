@@ -2,13 +2,13 @@ import { test, expect } from '../../fixtures';
 
 test.describe('Contact Page', () => {
 
-  test('should display contact page with heading', async ({ contactPage }) => {
+  test('should display contact page with heading @regression', async ({ contactPage }) => {
     await contactPage.open();
     await expect(contactPage.heading).toBeVisible();
     await expect(contactPage.messageHeading).toBeVisible();
   });
 
-  test('should display contact form fields', async ({ contactPage }) => {
+  test('should display contact form fields @regression', async ({ contactPage }) => {
     await contactPage.open();
     await expect(contactPage.nameInput).toBeVisible();
     await expect(contactPage.emailInput).toBeVisible();
@@ -17,7 +17,7 @@ test.describe('Contact Page', () => {
     await expect(contactPage.sendButton).toBeVisible();
   });
 
-  test('should allow filling contact form', async ({ contactPage }) => {
+  test('should allow filling contact form @regression', async ({ contactPage }) => {
     await contactPage.open();
     await contactPage.nameInput.fill('Test User');
     await contactPage.emailInput.fill('test@example.com');

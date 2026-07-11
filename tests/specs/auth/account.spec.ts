@@ -3,12 +3,12 @@ import { loginData } from '../../data/loginData';
 
 test.describe('Account', () => {
 
-  test('should redirect to login when not authenticated', async ({ page }) => {
+  test('should redirect to login when not authenticated @regression', async ({ page }) => {
     await page.goto('/account', { waitUntil: 'domcontentloaded' });
     await expect(page).toHaveURL(/\/login/);
   });
 
-  test('should display account page when logged in', async ({ loginPage, page }) => {
+  test('should display account page when logged in @regression', async ({ loginPage, page }) => {
     const { validUser } = loginData;
     await loginPage.open();
     await loginPage.login(validUser.email, validUser.password);

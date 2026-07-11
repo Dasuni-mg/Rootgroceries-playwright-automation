@@ -6,12 +6,12 @@ test.describe('Product Search', () => {
     await shopPage.open();
   });
 
-  test('should display search input on shop page', async ({ shopPage }) => {
+  test('should display search input on shop page @regression', async ({ shopPage }) => {
     await expect(shopPage.searchInput).toBeVisible();
     await expect(shopPage.searchInput).toHaveAttribute('placeholder', 'Search groceries');
   });
 
-  test('should filter products by search query', async ({ shopPage }) => {
+  test('should filter products by search query @regression', async ({ shopPage }) => {
     const initialCount = await shopPage.getProductCardsCount();
     expect(initialCount).toBeGreaterThan(0);
 
@@ -24,7 +24,7 @@ test.describe('Product Search', () => {
     }
   });
 
-  test('should show no results for non-existent product', async ({ shopPage }) => {
+  test('should show no results for non-existent product @regression', async ({ shopPage }) => {
     await shopPage.search('zzzznonexistentproductzzzz');
 
     const count = await shopPage.getProductCardsCount();
@@ -33,7 +33,7 @@ test.describe('Product Search', () => {
     await expect(shopPage.productGrid).not.toBeVisible();
   });
 
-  test('should clear search and restore all products', async ({ shopPage, page }) => {
+  test('should clear search and restore all products @regression', async ({ shopPage, page }) => {
     const initialCount = await shopPage.getProductCardsCount();
     expect(initialCount).toBeGreaterThan(0);
 
@@ -48,7 +48,7 @@ test.describe('Product Search', () => {
     expect(restoredCount).toEqual(initialCount);
   });
 
-  test('should return relevant results after searching', async ({ shopPage }) => {
+  test('should return relevant results after searching @regression', async ({ shopPage }) => {
     await shopPage.search('Vanilla');
     const names = await shopPage.getAllProductNames();
     expect(names.length).toBeGreaterThan(0);

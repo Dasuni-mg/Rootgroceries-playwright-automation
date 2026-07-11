@@ -8,7 +8,7 @@ test.describe('Login Feature', () => {
     await loginPage.open();
   });
 
-  test('Login with valid credentials', async ({ loginPage }) => {
+  test('Login with valid credentials @regression', async ({ loginPage }) => {
     const { validUser } = loginData;
 
     await loginPage.login(validUser.email, validUser.password);
@@ -17,14 +17,14 @@ test.describe('Login Feature', () => {
     await expect(loginPage.passwordError).toBeHidden();
   });
 
-  test('Login with invalid password', async ({ loginPage, page }) => {
+  test('Login with invalid password @regression', async ({ loginPage, page }) => {
     await loginPage.login(loginData.validUser.email, loginData.invalidUser.password)
 
     await expect(page).toHaveURL('/login');
     await expect(page.locator('.toast-error')).toBeVisible();
   });
 
-  test('Login with invalid email', async ({ loginPage, page }) => {
+  test('Login with invalid email @regression', async ({ loginPage, page }) => {
     await loginPage.login(loginData.invalidUser.email, loginData.validUser.password);
 
     await expect(page).toHaveURL('/login');
