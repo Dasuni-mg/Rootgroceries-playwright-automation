@@ -1,33 +1,34 @@
 import { Page } from '@playwright/test';
 
 export async function selectSriLanka(page: Page): Promise<boolean> {
-  // Wait for the country gate dialog to appear (it may load after domcontentloaded)
   const dialog = page.getByRole('dialog', { name: /where are you shopping/i });
   try {
-    await dialog.waitFor({ state: 'visible', timeout: 5000 });
+    await dialog.waitFor({ state: 'visible', timeout: 3000 });
   } catch {
-    return false; // no dialog, nothing to do
+    return false;
   }
 
-  // Try clicking the Sri Lanka card if enabled
-  const sri = dialog.getByRole('button', { name: /sri lanka/i });
-  if (await sri.isVisible().catch(() => false) && await sri.isEnabled().catch(() => false)) {
-    await sri.click({ force: true });
-    await page.waitForLoadState('networkidle').catch(() => null);
-    // Check if dialog was dismissed (may have navigated)
-    const stillOpen = await dialog.isVisible().catch(() => false);
-    if (!stillOpen) return true;
+  // Try clicking the enabled Sri Lanka country-card button
+  const countryCards = dialog.locator('button.country-card');
+  const cardCount = await countryCards.count().catch(() => 0);
+  for (let i = 0; i < cardCount; i++) {
+    const text = await countryCards.nth(i).innerText().catch(() => '');
+    const disabled = await countryCards.nth(i).isDisabled().catch(() => true);
+    if (/sri lanka/i.test(text) && !disabled) {
+      await countryCards.nth(i).click({ force: true });
+      await page.waitForTimeout(1500);
+      const gone = !(await dialog.isVisible().catch(() => false));
+      if (gone) return true;
+    }
   }
 
-  // Force-close the dialog: remove it from DOM + escape key
+  // Force-close: remove dialog from DOM + escape key
   await page.evaluate(() => {
-    const gate = document.querySelector<HTMLElement>('[class*="country-gate"], [role="dialog"][aria-modal="true"]');
+    const gate = document.querySelector<HTMLElement>('.country-gate');
     if (gate) gate.remove();
   }).catch(() => {});
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
 
-  // Verify it's gone
-  const closed = !(await dialog.isVisible().catch(() => false));
-  return closed;
+  return !(await dialog.isVisible().catch(() => false));
 }

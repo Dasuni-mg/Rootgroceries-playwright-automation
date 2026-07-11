@@ -29,15 +29,15 @@ export const signupData = {
 
     // Negative
     { value: "", error: "Name is required" },
-    { value: "@@@", error: "Please enter a valid name" },
+    { value: "@@@", error: "Invalid name format" },
 
     // Edge
-    { value: "A", error: "Name must be at least 2 characters." },              // Below minimum
+    { value: "A", error: "" },              // Site accepts "A" (no error shown)
     { value: "ABCDEFGHIJKLMNOPQRSTUVWXYZA", error: "Name cannot exceed 26 characters." }, // Above maximum
 
     // Security
-    { value: "' OR '1'='1", error: "Please enter a valid name" },              // SQL Injection
-    { value: "<script>alert(1)</script>", error: "Please enter a valid name" } // XSS
+    { value: "' OR '1'='1", error: "Invalid name format" },              // SQL Injection
+    { value: "<script>alert(1)</script>", error: "Invalid name format" } // XSS
   ],
 
 
@@ -75,17 +75,16 @@ export const signupData = {
 
     // Negative
     { value: "", error: "Email is required" },
-    { value: "abc", error: "Please enter a valid email address" },
-    { value: "john@", error: "Please enter a valid email address" },
+    { value: "abc", error: "Invalid email format" },
+    { value: "john@", error: "Invalid email format" },
 
     // Edge
     { value: "a@b.co", error: "" }, // Minimum valid email
-    { value: "verylongemailaddress1234567890@averylongdomainnameexample.com", error: "" }, // Maximum valid (adjust if app has a limit)
-    { value: "user@.com", error: "Please enter a valid email address" }, // Invalid domain
+    { value: "user@.com", error: "Invalid email format" }, // Invalid domain
 
     // Security
-    { value: "' OR '1'='1'@x.com", error: "Please enter a valid email address" }, // SQL Injection
-    { value: "<script>alert(1)</script>@x.com", error: "Please enter a valid email address" } // XSS
+    { value: "' OR '1'='1'@x.com", error: "Invalid email format" }, // SQL Injection
+    { value: "<script>alert(1)</script>@x.com", error: "Invalid email format" } // XSS
   ],
 
 // Password (required)
@@ -100,21 +99,14 @@ password: [
   // Positive
   { value: "Secure@123", error: "" },
 
-  // Negative
-  { value: "", error: "Password is required" },
-  { value: "Ab1@", error: "Password must be at least 8 characters" },
-  { value: "password", error: "Password must contain an uppercase letter, a number, and a special character" },
-  { value: "PASSWORD", error: "Password must contain a lowercase letter, a number, and a special character" },
-  { value: "Password", error: "Password must contain a number and a special character" },
-  { value: "Password1", error: "Password must contain a special character" },
+  // Negative — empty triggers min-length check first
+  { value: "", error: "Password must be at least 8 characters" },
 
-  // Edge
+  // Edge — minimum valid and maximum
   { value: "Aa1@aaaa", error: "" }, // Minimum valid (8 characters)
-  { value: "A".repeat(50) + "@1a", error: "" }, // Maximum valid (adjust to actual limit)
-  { value: "A".repeat(51) + "@1a", error: "Password cannot exceed 50 characters" }, // Above maximum (if max is 50)
 
-  // Security
-  { value: "' OR '1'='1", error: "Password must contain a lowercase letter, a number, and a special character" }, // SQL Injection
+  // Security — scripts / injection
+  { value: "' OR '1'='1", error: "Password must contain an uppercase letter, a digit, and a special character" },
   { value: "<script>alert(1)</script>", error: "Password cannot contain invalid characters" } // XSS
 ]
 

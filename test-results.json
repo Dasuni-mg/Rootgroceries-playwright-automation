@@ -1,16 +1,6 @@
 {
   "config": {
-    "argv": [
-      "C:\\Program Files\\nodejs\\node.exe",
-      "D:\\Rootgroceries playwright automation\\node_modules\\@playwright\\test\\cli.js",
-      "test",
-      "--project=chromium",
-      "--grep",
-      "checkout and validate",
-      "--workers=1",
-      "--timeout=120000",
-      "--trace=on"
-    ],
+    "argv": [],
     "configFile": "D:\\Rootgroceries playwright automation\\playwright.config.ts",
     "rootDir": "D:/Rootgroceries playwright automation/tests/specs",
     "failOnFlakyTests": false,
@@ -41,7 +31,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 120000
+        "timeout": 30000
       }
     ],
     "quiet": false,
@@ -70,34 +60,32 @@
     "shard": null,
     "tags": [],
     "updateSnapshots": "missing",
-    "updateSourceMethod": "patch",
+    "updateSourceMethod": "3way",
     "version": "1.61.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
     {
-      "title": "shop\\checkout.spec.ts",
-      "file": "shop/checkout.spec.ts",
+      "title": "shop\\home.spec.ts",
+      "file": "shop/home.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Checkout",
-          "file": "shop/checkout.spec.ts",
-          "line": 5,
+          "title": "Homepage",
+          "file": "shop/home.spec.ts",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "should complete checkout and validate order confirmation @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
+              "title": "should display shop by category section",
+              "ok": false,
+              "tags": [],
               "tests": [
                 {
-                  "timeout": 120000,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -106,29 +94,55 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 58695,
-                      "errors": [],
+                      "status": "timedOut",
+                      "duration": 58319,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\pages\\homePage.ts",
+                            "column": 21,
+                            "line": 44
+                          },
+                          "message": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://rootsgroceries.com/\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n\u001b[90m   at \u001b[39m..\\pages\\homePage.ts:44\n\n\u001b[0m \u001b[90m 42 |\u001b[39m\n \u001b[90m 43 |\u001b[39m   \u001b[36masync\u001b[39m open() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m selectSriLanka(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage)\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mheroHeading\u001b[33m.\u001b[39mwaitFor({ state\u001b[33m:\u001b[39m \u001b[32m'visible'\u001b[39m\u001b[33m,\u001b[39m timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\n \u001b[90m 47 |\u001b[39m   }\u001b[0m\n\u001b[2m    at HomePage.open (D:\\Rootgroceries playwright automation\\tests\\pages\\homePage.ts:44:21)\u001b[22m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\shop\\home.spec.ts:12:20\u001b[22m"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-10T03:40:54.967Z",
+                      "startTime": "2026-07-11T10:03:43.090Z",
                       "annotations": [],
                       "attachments": [
                         {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-home-Homepage-should-display-shop-by-category-section-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-home-Homepage-should-display-shop-by-category-section-chromium\\error-context.md"
+                        },
+                        {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-checkout-Checkout-sho-0d5bf-te-order-confirmation-smoke-chromium\\trace.zip"
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-home-Homepage-should-display-shop-by-category-section-chromium\\trace.zip"
                         }
                       ]
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
-              "id": "64d960228790d004814c-ebefd4b4da6333e7077d",
-              "file": "shop/checkout.spec.ts",
-              "line": 7,
+              "id": "5dad41ebc3e3ff1327ca-d0c86e089f40deed3ff3",
+              "file": "shop/home.spec.ts",
+              "line": 11,
               "column": 7
             }
           ]
@@ -138,11 +152,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-07-10T03:40:53.767Z",
-    "duration": 60824.88,
-    "expected": 1,
+    "startTime": "2026-07-11T10:03:32.680Z",
+    "duration": 137322.9169999999,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

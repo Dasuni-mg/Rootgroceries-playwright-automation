@@ -43,11 +43,12 @@ export class LoginPage {
     await this.page.goto('/login', { waitUntil: 'domcontentloaded' });
     await selectSriLanka(this.page);
   }
+  
   async login(email: string, password: string) {
     await selectSriLanka(this.page);
     await this.emailOrPhoneInput.fill(email);
     await this.passwordInput.fill(password);
-    await this.loginButton.click();
+    await this.loginButton.click({ force: true });
   }
 
   async clickForgotPassword() {

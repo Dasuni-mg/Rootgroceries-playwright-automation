@@ -49,7 +49,7 @@ test.describe('Product Search', () => {
   });
 
   test('should return to page 1 after searching', async ({ shopPage }) => {
-    if (await shopPage.nextPageLink.isVisible().catch(() => false)) {
+    if (await shopPage.nextPageButton.isVisible().catch(() => false)) {
       await shopPage.goToNextPage();
       const pageNumAfterNav = await shopPage.getCurrentPage();
       expect(pageNumAfterNav).toBeGreaterThan(1);

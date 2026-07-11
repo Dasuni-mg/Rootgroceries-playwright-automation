@@ -31,7 +31,7 @@ export class ShopPage {
   }
 
   get sortSelect() {
-    return this.page.getByRole('combobox', { name: /sort by/i });
+    return this.page.getByRole('combobox', { name: /sort/i });
   }
 
   get productCards() {
@@ -42,12 +42,12 @@ export class ShopPage {
     return this.page.locator('div.product-grid');
   }
 
-  get previousPageLink() {
-    return this.page.getByRole('link', { name: /previous/i });
+  get previousPageButton() {
+    return this.page.getByRole('button', { name: /previous/i });
   }
 
-  get nextPageLink() {
-    return this.page.getByRole('link', { name: /next/i });
+  get nextPageButton() {
+    return this.page.getByRole('button', { name: /next/i });
   }
 
   async open() {
@@ -92,12 +92,12 @@ export class ShopPage {
   }
 
   async goToNextPage() {
-    await this.nextPageLink.click();
+    await this.nextPageButton.click();
     await this.page.waitForTimeout(500);
   }
 
   async goToPreviousPage() {
-    await this.previousPageLink.click();
+    await this.previousPageButton.click();
     await this.page.waitForTimeout(500);
   }
 

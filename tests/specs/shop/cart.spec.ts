@@ -1,48 +1,35 @@
 import { test, expect } from '../../fixtures';
+import { getFirstProductSlug } from '../helpers';
 
 test.describe('Cart', () => {
 
   test('should add a product to cart and validate it appears in cart @smoke', async ({ shopPage, productPage, cartPage, page }) => {
-    await shopPage.open();
+    const slug = await getFirstProductSlug(shopPage);
+    expect(slug).toBeTruthy();
 
-    const productCount = await shopPage.productCards.count();
-    expect(productCount).toBeGreaterThan(0);
-
-    const productNames = await shopPage.productCards.locator('a.product-name').allInnerTexts();
-    const selectedProductName = productNames[0];
-    await page.getByRole('link', { name: selectedProductName }).and(page.locator('.product-name')).click();
-
-    await productPage.waitForPageLoaded();
-
+    await productPage.open(slug!);
     await expect(productPage.addToCartButton).toBeVisible();
     await expect(productPage.addToCartButton).toBeEnabled();
-
     await productPage.addToCart();
 
     await cartPage.open();
-
     await expect(cartPage.cartLayout).toBeVisible();
-
     const itemCount = await cartPage.getItemCount();
     expect(itemCount).toBeGreaterThan(0);
 
+    const productName = await productPage.productName.innerText();
     const itemNames = await cartPage.getItemNames();
     const found = itemNames.some((name) =>
-      name.toLowerCase().includes(selectedProductName.toLowerCase())
+      name.toLowerCase().includes(productName.toLowerCase())
     );
     expect(found).toBe(true);
   });
 
   test('should show cart count badge after adding product', async ({ shopPage, productPage, page }) => {
-    await shopPage.open();
+    const slug = await getFirstProductSlug(shopPage);
+    expect(slug).toBeTruthy();
 
-    const productCount = await shopPage.productCards.count();
-    expect(productCount).toBeGreaterThan(0);
-
-    const productNames = await shopPage.productCards.locator('a.product-name').allInnerTexts();
-    await page.getByRole('link', { name: productNames[0] }).and(page.locator('.product-name')).click();
-
-    await productPage.waitForPageLoaded();
+    await productPage.open(slug!);
     await productPage.addToCart();
 
     const cartCount = page.locator('.cart-count');

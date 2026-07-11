@@ -69,7 +69,8 @@ export class ProductPage {
 
   async waitForPageLoaded() {
     await this.page.waitForURL(/\/product\//, { timeout: 15000 });
-    await this.productName.waitFor({ state: 'visible', timeout: 10000 });
+    await this.addToCartButton.waitFor({ state: 'visible', timeout: 10000 }).catch(() => {});
+    await this.productName.waitFor({ state: 'visible', timeout: 5000 });
   }
 
   async open(slug: string) {

@@ -21,14 +21,14 @@ test.describe('Login Feature', () => {
     await loginPage.login(loginData.validUser.email, loginData.invalidUser.password)
 
     await expect(page).toHaveURL('/login');
-    await expect(page.getByRole('alert')).toBeVisible();
+    await expect(page.locator('.toast-error')).toBeVisible();
   });
 
   test('Login with invalid email', async ({ loginPage, page }) => {
     await loginPage.login(loginData.invalidUser.email, loginData.validUser.password);
 
     await expect(page).toHaveURL('/login');
-    await expect(page.getByRole('alert')).toBeVisible();
+    await expect(page.locator('.toast-error')).toBeVisible();
   });
 
   test('Login with empty email', async ({ loginPage, page }) => {

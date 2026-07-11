@@ -1,6 +1,7 @@
 import { test, expect } from '../../fixtures';
 import { loginData } from '../../data/loginData';
 import { onepayCards, checkoutAddress } from '../../data/checkoutData';
+import { getInStockProductSlug } from '../helpers';
 
 test.describe('Checkout', () => {
 
@@ -13,28 +14,12 @@ test.describe('Checkout', () => {
     await loginPage.login(validUser.email, validUser.password);
     await page.waitForTimeout(1000);
 
-    await shopPage.open();
+    const slug = await getInStockProductSlug(shopPage);
+    expect(slug).toBeTruthy();
 
-    const productCount = await shopPage.productCards.count();
-    expect(productCount).toBeGreaterThan(0);
-
-    const productCards = shopPage.productCards;
-    const productNames = await productCards.locator('a.product-name').allInnerTexts();
-    let selectedProduct: string | null = null;
-
-    for (let i = 0; i < productNames.length; i++) {
-      await page.getByRole('link', { name: productNames[i] }).and(page.locator('.product-name')).click();
-      await productPage.waitForPageLoaded();
-      if (await productPage.addToCartButton.isEnabled()) {
-        selectedProduct = productNames[i];
-        break;
-      }
-      await page.goBack();
-      await page.waitForTimeout(500);
-    }
-    expect(selectedProduct).toBeTruthy();
-
+    await productPage.open(slug!);
     await productPage.addToCart();
+    await page.waitForTimeout(500);
 
     await cartPage.open();
     await expect(cartPage.cartLayout).toBeVisible();
@@ -82,23 +67,10 @@ test.describe('Checkout', () => {
     await loginPage.login(validUser.email, validUser.password);
     await page.waitForTimeout(1000);
 
-    await shopPage.open();
+    const slug = await getInStockProductSlug(shopPage);
+    expect(slug).toBeTruthy();
 
-    const productNames = await shopPage.productCards.locator('a.product-name').allInnerTexts();
-    let selectedProduct: string | null = null;
-
-    for (let i = 0; i < productNames.length; i++) {
-      await page.getByRole('link', { name: productNames[i] }).and(page.locator('.product-name')).click();
-      await productPage.waitForPageLoaded();
-      if (await productPage.addToCartButton.isEnabled()) {
-        selectedProduct = productNames[i];
-        break;
-      }
-      await page.goBack();
-      await page.waitForTimeout(500);
-    }
-    expect(selectedProduct).toBeTruthy();
-
+    await productPage.open(slug!);
     await productPage.addToCart();
 
     await cartPage.open();
