@@ -4,7 +4,7 @@ test.describe('Forgot Password', () => {
 
   test('should display forgot password page with heading @regression', async ({ forgotPasswordPage }) => {
     await forgotPasswordPage.open();
-    await expect(forgotPasswordPage.heading).toHaveText('Forgot Password');
+    await expect(forgotPasswordPage.heading).toHaveText('Reset Password');
   });
 
   test('should display email input and reset button @regression', async ({ forgotPasswordPage }) => {
