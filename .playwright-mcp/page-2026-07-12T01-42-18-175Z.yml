@@ -1,0 +1,69 @@
+- main [ref=e4]:
+  - generic [ref=e5]:
+    - navigation [ref=e7]:
+      - link "All3" [ref=e8] [cursor=pointer]:
+        - /url: "#?"
+      - link "Passed2" [ref=e9] [cursor=pointer]:
+        - /url: "#?q=s%3Apassed"
+      - link "Failed1" [ref=e12] [cursor=pointer]:
+        - /url: "#?q=s%3Afailed"
+      - link "Flaky0" [ref=e15] [cursor=pointer]:
+        - /url: "#?q=s%3Aflaky"
+      - link "Skipped0" [ref=e16] [cursor=pointer]:
+        - /url: "#?q=s%3Askipped"
+      - link "Speedboard" [ref=e17] [cursor=pointer]:
+        - /url: "#?speedboard"
+      - button "Settings" [ref=e20] [cursor=pointer]
+    - textbox "Search tests" [ref=e24]
+  - generic [ref=e26]:
+    - generic [ref=e27]: "Project: chromium"
+    - generic [ref=e30]: 7/12/2026, 7:02:06 AM
+    - generic [ref=e31]: "Total time: 17.8s"
+  - generic [ref=e32]:
+    - button "auth/forgot-password.spec.ts" [expanded] [ref=e33] [cursor=pointer]
+    - region [ref=e36]:
+      - list [ref=e37]:
+        - listitem [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e44]:
+              - link "Forgot Password › should display forgot password page with heading @regression" [ref=e45] [cursor=pointer]:
+                - /url: "#?testId=8650b62c299ece63c447-2a098b21207b4e1f0e59"
+              - generic [ref=e46]:
+                - generic [ref=e47] [cursor=pointer]: chromium
+                - generic [ref=e49] [cursor=pointer]: regression
+            - generic [ref=e50]: 16.0s
+          - generic [ref=e52]:
+            - link "auth/forgot-password.spec.ts:5" [ref=e53] [cursor=pointer]:
+              - /url: "#?testId=8650b62c299ece63c447-2a098b21207b4e1f0e59"
+            - link "View video" [ref=e55] [cursor=pointer]:
+              - /url: "#?testId=8650b62c299ece63c447-2a098b21207b4e1f0e59&run=0&anchor=attachment-video"
+            - link "View Trace" [ref=e58] [cursor=pointer]:
+              - /url: http://localhost:9323/trace/index.html?trace=http://localhost:9323/data/761275eec95987b2328e09022fc9d558cb6341ac.zip
+        - listitem [ref=e62]:
+          - generic [ref=e63]:
+            - generic [ref=e68]:
+              - link "Forgot Password › should display email input and reset button @regression" [ref=e69] [cursor=pointer]:
+                - /url: "#?testId=8650b62c299ece63c447-e964cf103bf8c6182e26"
+              - generic [ref=e70]:
+                - generic [ref=e71] [cursor=pointer]: chromium
+                - generic [ref=e73] [cursor=pointer]: regression
+            - generic [ref=e74]: 5.2s
+          - generic [ref=e76]:
+            - link "auth/forgot-password.spec.ts:10" [ref=e77] [cursor=pointer]:
+              - /url: "#?testId=8650b62c299ece63c447-e964cf103bf8c6182e26"
+            - link "View Trace" [ref=e79] [cursor=pointer]:
+              - /url: http://localhost:9323/trace/index.html?trace=http://localhost:9323/data/f877251534fd91a86f38bc18b8bed1436ed73c33.zip
+        - listitem [ref=e83]:
+          - generic [ref=e84]:
+            - generic [ref=e89]:
+              - link "Forgot Password › should allow entering email @regression" [ref=e90] [cursor=pointer]:
+                - /url: "#?testId=8650b62c299ece63c447-86cbf20d126db5d5cfc7"
+              - generic [ref=e91]:
+                - generic [ref=e92] [cursor=pointer]: chromium
+                - generic [ref=e94] [cursor=pointer]: regression
+            - generic [ref=e95]: 4.2s
+          - generic [ref=e97]:
+            - link "auth/forgot-password.spec.ts:16" [ref=e98] [cursor=pointer]:
+              - /url: "#?testId=8650b62c299ece63c447-86cbf20d126db5d5cfc7"
+            - link "View Trace" [ref=e100] [cursor=pointer]:
+              - /url: http://localhost:9323/trace/index.html?trace=http://localhost:9323/data/ac8d70d9c0b8a5a692f626f495ad279ad5e11c5d.zip

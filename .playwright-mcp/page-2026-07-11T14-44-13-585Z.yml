@@ -1,0 +1,88 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Roots Groceries home" [ref=e6] [cursor=pointer]:
+        - /url: /
+      - navigation "Main navigation" [ref=e8]:
+        - link "Home" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Shop All" [ref=e10] [cursor=pointer]:
+          - /url: /shop
+        - link "Orders" [ref=e11] [cursor=pointer]:
+          - /url: /orders
+        - link "Account" [ref=e12] [cursor=pointer]:
+          - /url: /account
+      - generic [ref=e13]:
+        - link "View cart with 1 item" [ref=e613] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=e19]: Cart
+          - generic [ref=e20]: "1"
+        - link "M.G" [active] [ref=e614] [cursor=pointer]:
+          - /url: /account
+  - main [ref=e22]:
+    - generic [ref=e1115]:
+      - generic [ref=e1116]:
+        - generic [ref=e1117]: MD
+        - generic [ref=e1118]:
+          - generic [ref=e1119]: Customer account
+          - heading "M.G Dasuni Nuwanika" [level=1] [ref=e1120]
+          - generic [ref=e1121]: Member since June 2026
+        - button "Edit profile" [ref=e1122] [cursor=pointer]
+        - button [ref=e1124] [cursor=pointer]
+      - generic [ref=e1129]:
+        - generic [ref=e1130]:
+          - generic [ref=e1131]: Email
+          - strong [ref=e1132]: nuwanika@gmail.com
+        - generic [ref=e1133]:
+          - generic [ref=e1134]: Phone
+          - strong [ref=e1135]: "0768354410"
+        - generic [ref=e1136]:
+          - generic [ref=e1137]: Region
+          - generic [ref=e1138]:
+            - strong [ref=e1139]: Sri Lanka · USD
+            - generic [ref=e1140]: "* All store transactions are processed in USD"
+        - generic [ref=e1141]:
+          - generic [ref=e1142]: Role
+          - strong [ref=e1143]: customer
+      - generic [ref=e1144]:
+        - generic [ref=e1145]:
+          - heading "Saved addresses" [level=2] [ref=e1146]
+          - button [ref=e1147] [cursor=pointer]
+        - paragraph [ref=e1150]: No saved addresses yet.
+      - generic [ref=e1151]:
+        - heading "Danger Zone" [level=3] [ref=e1153]
+        - generic [ref=e1154]:
+          - generic [ref=e1155]:
+            - strong [ref=e1156]: Delete account
+            - paragraph [ref=e1157]: Deactivate your account and revoke all active sessions. Your order history is retained for compliance.
+          - button "Delete account" [ref=e1158] [cursor=pointer]
+  - contentinfo [ref=e326]:
+    - generic [ref=e327]:
+      - generic [ref=e328]:
+        - link "Roots Groceries home" [ref=e329] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e332]:
+            - strong [ref=e333]: Roots
+            - generic [ref=e334]: Groceries
+        - paragraph [ref=e335]: Flavors of South Asia, curated for a modern Sri Lankan pantry.
+      - generic [ref=e336]:
+        - heading "Shop" [level=3] [ref=e337]
+        - link "All groceries" [ref=e338] [cursor=pointer]:
+          - /url: /shop
+        - link "Cart" [ref=e339] [cursor=pointer]:
+          - /url: /cart
+        - link "Orders" [ref=e340] [cursor=pointer]:
+          - /url: /orders
+      - generic [ref=e341]:
+        - heading "Service" [level=3] [ref=e342]
+        - generic [ref=e343]: Islandwide delivery
+        - generic [ref=e349]: Fresh stock checks
+        - generic [ref=e355]: Cash on delivery
+        - generic [ref=e359]: Secure checkout
+      - generic [ref=e363]:
+        - heading "Company" [level=3] [ref=e364]
+        - link "Contact us" [ref=e365] [cursor=pointer]:
+          - /url: /contact
+        - link "Privacy Policy" [ref=e366] [cursor=pointer]:
+          - /url: /privacy
+    - generic [ref=e367]: © 2026 Roots Groceries
