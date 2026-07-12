@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures';
+import { test, expect } from '../../fixtures/fixtures';
 import { loginData } from '../../data/loginData';
 import { onepayCards, checkoutAddress } from '../../data/checkoutData';
 import { getInStockProductSlug } from '../../helpers/helpers';

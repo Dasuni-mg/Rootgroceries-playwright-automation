@@ -1,16 +1,16 @@
 import { test as base } from '@playwright/test';
-import { ShopPage } from './pages/shopPage';
-import { ProductPage } from './pages/productPage';
-import { CartPage } from './pages/cartPage';
-import { CheckoutPage } from './pages/checkoutPage';
-import { OrderConfirmationPage } from './pages/orderConfirmationPage';
-import { LoginPage } from './pages/auth/loginPage';
-import { SignupPage } from './pages/auth/signupPage';
-import { HomePage } from './pages/homePage';
-import { AccountPage } from './pages/accountPage';
-import { OrdersPage } from './pages/ordersPage';
-import { ContactPage } from './pages/contactPage';
-import { ForgotPasswordPage } from './pages/forgotPasswordPage';
+import { ShopPage } from '../pages/shopPage';
+import { ProductPage } from '../pages/productPage';
+import { CartPage } from '../pages/cartPage';
+import { CheckoutPage } from '../pages/checkoutPage';
+import { OrderConfirmationPage } from '../pages/orderConfirmationPage';
+import { LoginPage } from '../pages/auth/loginPage';
+import { SignupPage } from '../pages/auth/signupPage';
+import { HomePage } from '../pages/homePage';
+import { AccountPage } from '../pages/accountPage';
+import { OrdersPage } from '../pages/ordersPage';
+import { ContactPage } from '../pages/contactPage';
+import { ForgotPasswordPage } from '../pages/forgotPasswordPage';
 
 type MyFixtures = {
   shopPage: ShopPage;

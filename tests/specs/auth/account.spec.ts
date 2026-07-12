@@ -1,4 +1,4 @@
-import { test, expect } from '../../fixtures';
+import { test, expect } from '../../fixtures/fixtures';
 import { loginData } from '../../data/loginData';
 
 test.describe('Account', () => {

@@ -1,10 +1,10 @@
-import { test, expect } from '../../fixtures';
+import { test, expect } from '../../fixtures/fixtures';
 
 test.describe('Forgot Password', () => {
 
   test('should display forgot password page with heading @regression', async ({ forgotPasswordPage }) => {
     await forgotPasswordPage.open();
-    await expect(forgotPasswordPage.heading).toBeVisible();
+    await expect(forgotPasswordPage.heading).toHaveText('Forgot Password');
   });
 
   test('should display email input and reset button @regression', async ({ forgotPasswordPage }) => {

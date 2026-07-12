@@ -4,8 +4,7 @@
       "C:\\Program Files\\nodejs\\node.exe",
       "D:\\Rootgroceries playwright automation\\node_modules\\@playwright\\test\\cli.js",
       "test",
-      "tests/specs/shop/cart.spec.ts",
-      "--debug"
+      "tests/specs/auth/forgot-password.spec.ts"
     ],
     "configFile": "D:\\Rootgroceries playwright automation\\playwright.config.ts",
     "rootDir": "D:/Rootgroceries playwright automation/tests/specs",
@@ -17,9 +16,9 @@
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
-    "maxFailures": 1,
+    "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 2
     },
     "preserveOutput": "always",
     "projects": [
@@ -28,7 +27,7 @@
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 2
         },
         "id": "chromium",
         "name": "chromium",
@@ -37,7 +36,7 @@
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
         ],
-        "timeout": 0
+        "timeout": 30000
       }
     ],
     "quiet": false,
@@ -68,117 +67,32 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.61.1",
-    "workers": 1,
+    "workers": 2,
     "webServer": null
   },
   "suites": [
     {
-      "title": "shop\\cart.spec.ts",
-      "file": "shop/cart.spec.ts",
+      "title": "auth\\forgot-password.spec.ts",
+      "file": "auth/forgot-password.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Cart",
-          "file": "shop/cart.spec.ts",
-          "line": 4,
+          "title": "Forgot Password",
+          "file": "auth/forgot-password.spec.ts",
+          "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "should add a product to cart and validate it appears in cart @smoke @regression",
-              "ok": true,
-              "tags": [
-                "smoke",
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 0,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 25068,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-07-11T15:46:41.462Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-add--096fd-rs-in-cart-smoke-regression-chromium\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "89af35a32f2b96464e99-4c46964bd0221329a8cc",
-              "file": "shop/cart.spec.ts",
-              "line": 6,
-              "column": 7
-            },
-            {
-              "title": "should show cart count badge after adding product @regression",
-              "ok": true,
-              "tags": [
-                "regression"
-              ],
-              "tests": [
-                {
-                  "timeout": 0,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 19031,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-07-11T15:47:07.757Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-10f00-r-adding-product-regression-chromium\\trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "89af35a32f2b96464e99-79a70d8a665072fd6e72",
-              "file": "shop/cart.spec.ts",
-              "line": 28,
-              "column": 7
-            },
-            {
-              "title": "should show empty cart state when no items have been added @regression",
+              "title": "should display forgot password page with heading @regression",
               "ok": false,
               "tags": [
                 "regression"
               ],
               "tests": [
                 {
-                  "timeout": 0,
+                  "timeout": 30000,
                   "annotations": [],
                   "expectedStatus": "passed",
                   "projectId": "chromium",
@@ -188,77 +102,151 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 50919,
+                      "duration": 16034,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /your cart is ready/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /your cart is ready/i })\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /your cart is ready/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /your cart is ready/i })\u001b[22m\n\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\shop\\cart.spec.ts:46:43",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { name: /reset password/i })\nExpected: \u001b[32m\"\u001b[7mForgo\u001b[27mt \u001b[7mP\u001b[27massword\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mRese\u001b[27mt \u001b[7mp\u001b[27massword\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /reset password/i })\u001b[22m\n\u001b[2m    23 × locator resolved to <h1>Reset password</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Reset password\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { name: /reset password/i })\nExpected: \u001b[32m\"\u001b[7mForgo\u001b[27mt \u001b[7mP\u001b[27massword\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mRese\u001b[27mt \u001b[7mp\u001b[27massword\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /reset password/i })\u001b[22m\n\u001b[2m    23 × locator resolved to <h1>Reset password</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Reset password\"\u001b[22m\n\n    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\forgot-password.spec.ts:7:46",
                         "location": {
-                          "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\shop\\cart.spec.ts",
-                          "column": 43,
-                          "line": 46
+                          "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\forgot-password.spec.ts",
+                          "column": 46,
+                          "line": 7
                         },
-                        "snippet": "\u001b[0m \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m isEmpty \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39misCartEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mif\u001b[39m (isEmpty) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 46 |\u001b[39m       \u001b[36mawait\u001b[39m expect(cartPage\u001b[33m.\u001b[39memptyHeading)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 47 |\u001b[39m       \u001b[36mawait\u001b[39m expect(cartPage\u001b[33m.\u001b[39mshopGroceriesLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 48 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 49 |\u001b[39m       \u001b[36mconst\u001b[39m items \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetCartItems()\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m   test(\u001b[32m'should display forgot password page with heading @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ forgotPasswordPage }) \u001b[33m=>\u001b[39m {\n \u001b[90m  6 |\u001b[39m     \u001b[36mawait\u001b[39m forgotPasswordPage\u001b[33m.\u001b[39mopen()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[36mawait\u001b[39m expect(forgotPasswordPage\u001b[33m.\u001b[39mheading)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'Forgot Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   test(\u001b[32m'should display email input and reset button @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ forgotPasswordPage }) \u001b[33m=>\u001b[39m {\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\shop\\cart.spec.ts",
-                            "column": 43,
-                            "line": 46
+                            "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\forgot-password.spec.ts",
+                            "column": 46,
+                            "line": 7
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: /your cart is ready/i })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /your cart is ready/i })\u001b[22m\n\n\n\u001b[0m \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m isEmpty \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39misCartEmpty()\u001b[33m;\u001b[39m\n \u001b[90m 45 |\u001b[39m     \u001b[36mif\u001b[39m (isEmpty) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 46 |\u001b[39m       \u001b[36mawait\u001b[39m expect(cartPage\u001b[33m.\u001b[39memptyHeading)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 47 |\u001b[39m       \u001b[36mawait\u001b[39m expect(cartPage\u001b[33m.\u001b[39mshopGroceriesLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 48 |\u001b[39m     } \u001b[36melse\u001b[39m {\n \u001b[90m 49 |\u001b[39m       \u001b[36mconst\u001b[39m items \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m cartPage\u001b[33m.\u001b[39mgetCartItems()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\shop\\cart.spec.ts:46:43\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { name: /reset password/i })\nExpected: \u001b[32m\"\u001b[7mForgo\u001b[27mt \u001b[7mP\u001b[27massword\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mRese\u001b[27mt \u001b[7mp\u001b[27massword\"\u001b[39m\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: /reset password/i })\u001b[22m\n\u001b[2m    23 × locator resolved to <h1>Reset password</h1>\u001b[22m\n\u001b[2m       - unexpected value \"Reset password\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  5 |\u001b[39m   test(\u001b[32m'should display forgot password page with heading @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ forgotPasswordPage }) \u001b[33m=>\u001b[39m {\n \u001b[90m  6 |\u001b[39m     \u001b[36mawait\u001b[39m forgotPasswordPage\u001b[33m.\u001b[39mopen()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[36mawait\u001b[39m expect(forgotPasswordPage\u001b[33m.\u001b[39mheading)\u001b[33m.\u001b[39mtoHaveText(\u001b[32m'Forgot Password'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   test(\u001b[32m'should display email input and reset button @regression'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ forgotPasswordPage }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\forgot-password.spec.ts:7:46\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-07-11T15:47:28.136Z",
+                      "startTime": "2026-07-12T01:32:07.614Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-0c896--have-been-added-regression-chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-0c896--have-been-added-regression-chromium\\test-failed-2.png"
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-forgot-password-Forgo-a1eb3-age-with-heading-regression-chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-0c896--have-been-added-regression-chromium\\video-1.webm"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-0c896--have-been-added-regression-chromium\\video.webm"
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-forgot-password-Forgo-a1eb3-age-with-heading-regression-chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-0c896--have-been-added-regression-chromium\\error-context.md"
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-forgot-password-Forgo-a1eb3-age-with-heading-regression-chromium\\error-context.md"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\Rootgroceries playwright automation\\test-results\\shop-cart-Cart-should-show-0c896--have-been-added-regression-chromium\\trace.zip"
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-forgot-password-Forgo-a1eb3-age-with-heading-regression-chromium\\trace.zip"
                         }
                       ],
                       "errorLocation": {
-                        "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\shop\\cart.spec.ts",
-                        "column": 43,
-                        "line": 46
+                        "file": "D:\\Rootgroceries playwright automation\\tests\\specs\\auth\\forgot-password.spec.ts",
+                        "column": 46,
+                        "line": 7
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "89af35a32f2b96464e99-57b03ecabf710cb6bad6",
-              "file": "shop/cart.spec.ts",
-              "line": 41,
+              "id": "8650b62c299ece63c447-2a098b21207b4e1f0e59",
+              "file": "auth/forgot-password.spec.ts",
+              "line": 5,
+              "column": 7
+            },
+            {
+              "title": "should display email input and reset button @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5150,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T01:32:07.614Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-forgot-password-Forgo-1d0d1-and-reset-button-regression-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8650b62c299ece63c447-e964cf103bf8c6182e26",
+              "file": "auth/forgot-password.spec.ts",
+              "line": 10,
+              "column": 7
+            },
+            {
+              "title": "should allow entering email @regression",
+              "ok": true,
+              "tags": [
+                "regression"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4164,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-07-12T01:32:13.167Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\Rootgroceries playwright automation\\test-results\\auth-forgot-password-Forgo-6085d-w-entering-email-regression-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8650b62c299ece63c447-86cbf20d126db5d5cfc7",
+              "file": "auth/forgot-password.spec.ts",
+              "line": 16,
               "column": 7
             }
           ]
@@ -266,14 +254,10 @@
       ]
     }
   ],
-  "errors": [
-    {
-      "message": "\u001b[31mTesting stopped early after 1 maximum allowed failures.\u001b[39m"
-    }
-  ],
+  "errors": [],
   "stats": {
-    "startTime": "2026-07-11T15:46:40.408Z",
-    "duration": 99751.09400000001,
+    "startTime": "2026-07-12T01:32:06.361Z",
+    "duration": 17814.642,
     "expected": 2,
     "skipped": 0,
     "unexpected": 1,
