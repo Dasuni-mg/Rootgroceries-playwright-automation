@@ -1,6 +1,12 @@
-# Roots Groceries — Playwright Test Automation
+<p align="center">
+  <img src="https://rootsgroceries.com/assets/roots-groceries-logo-horizontal-D6OiQaMD.webp" alt="Roots Groceries" width="400">
+</p>
 
-End-to-end test automation for [Roots Groceries](https://rootsgroceries.com) using **Playwright** + **TypeScript**, built with industry-standard Page Object Model and custom fixtures.
+<h1 align="center">Roots Groceries — Playwright Test Automation</h1>
+
+<p align="center">
+  End-to-end test automation for <a href="https://rootsgroceries.com">rootsgroceries.com</a> using <strong>Playwright</strong> + <strong>TypeScript</strong>, built with Page Object Model and custom fixtures.
+</p>
 
 ---
 
